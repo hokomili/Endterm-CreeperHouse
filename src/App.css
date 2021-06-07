@@ -10,6 +10,11 @@ body {
   font-size: 62.5%;
   font-family: sans-serif;
 }
+.ant-layout {
+  width: 100vw;
+  min-height: 100vh;
+}
+
 /* Enterpage */
 
 .enter_mask {
@@ -42,15 +47,12 @@ body {
   margin-top: 55px;
 }
 
-
 .enter_r {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-right: 5%;
   margin-top: 100px;
-
-
 }
 
 .enter_title h3 {
@@ -58,29 +60,27 @@ body {
   font-weight: bold;
   color: rgb(255, 255, 255);
   margin-top: 176px;
-  text-align:center;
+  text-align: center;
   margin-bottom: 15%;
 }
 
-.enter_r_btn_area{
+.enter_r_btn_area {
   display: flex;
-
 }
 .enter_start_btn {
   width: 190px;
   height: 80px;
 
   margin-right: 40px;
-
 }
-.enter_start_btn h3{
+.enter_start_btn h3 {
   font-size: 4em;
   font-weight: bolder;
   /* color: #000; */
   text-align: center;
   line-height: 80px;
 }
-.enter_login_btn h3{
+.enter_login_btn h3 {
   font-size: 3.6em;
   color: rgb(255, 255, 255);
   font-weight: bolder;
@@ -88,6 +88,193 @@ body {
   line-height: 72px;
 }
 /* ----------btn效果試驗----------------- */
-.hvr-wobble-horizontal::before{
-  background: #33C754!important;
+.hvr-wobble-horizontal::before {
+  background: #33c754 !important;
+}
+
+/* Navbar --------------------------------------------------*/
+.Navbar_content {
+  width: 247px;
+  height: 100vh;
+  background-color: black;
+  display: grid;
+  grid-template-rows: 15% 55% 30%;
+  position: fixed;
+  z-index: 9;
+  /* justify-content: start; */
+  /*  */
+}
+.Navbar_a1 {
+  /* background-color: rgb(255, 6, 6); */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.Navbar_a2 {
+  /* background: rgb(6, 184, 255); */
+}
+
+.Navbar_a3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  /* background-color: rgb(255, 6, 201); */
+}
+
+/* a1 */
+.Navbar_member_img {
+  width: 60px;
+  height: 60px;
+}
+.Navbar_member_text {
+}
+.Navbar_member_text h3 {
+  font-size: 2.4em;
+  color: white;
+  font-weight: bold;
+  margin-left: 20px;
+  text-align: center;
+}
+
+/* a2 */
+.navbar_ico {
+  width: 40px;
+  height: 40px;
+  margin-left: 55px;
+}
+.navbar_flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  padding-top: 10px;
+  padding-bottom: 5px;
+}
+.Navbar_w {
+  margin-left: 35px;
+}
+.Navbar_w h3 {
+  font-size: 1.8em;
+  color: white;
+  font-weight: bold;
+  margin: auto;
+}
+.Navbar_Social {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+.Navbar_twitter {
+  width: 39px;
+  height: 45px;
+  margin-left: 10px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+.Navbar_facebook {
+  width: 39px;
+  height: 39px;
+  margin-left: 10px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+.Navbar_discord {
+  width: 42px;
+  height: 42px;
+  margin-left: 10px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+/* --btn-- */
+.hvr-fade {
+  display: flex !important;
+}
+.hvr-fade:hover {
+  background-color: #33c754 !important;
+}
+.Navbar_Home:hover .Navbar_w h3 {
+  color: #000;
+  transition-duration: 0.3s;
+}
+.Navbar_Mod:hover .Navbar_w h3 {
+  color: #000;
+  transition-duration: 0.3s;
+}
+.Navbar_Texture:hover .Navbar_w h3 {
+  color: #000;
+  transition-duration: 0.3s;
+}
+.Navbar_Map:hover .Navbar_w h3 {
+  color: #000;
+  transition-duration: 0.3s;
+}
+.Navbar_Youtuber:hover .Navbar_w h3 {
+  color: #000;
+  transition-duration: 0.3s;
+}
+/* a3 */
+
+.navbar_choic {
+  margin-right: 5px;
+  cursor: pointer;
+
+  width: 25px;
+  height: 25px;
+  position: relative;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.navbar_choic:after {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 0;
+  content: " ";
+  background-color: #ffffff;
+  color: rgb(231, 6, 6);
+  display: inline-block;
+  visibility: visible;
+  padding: 0px 3px;
+  border-radius: 50%;
+}
+
+.navbar_choic:checked:before {
+  content: " ";
+  display: block;
+  position: relative;
+  top: 2.5px;
+  left: 2.5px;
+  width: 20px;
+  height: 20px;
+  background: rgb(21, 150, 4);
+  border-radius: 99px;
+  color: rgb(235, 15, 15);
+  font-weight: 400;
+  z-index: 1;
+}
+
+.navbar_choic_p h3 {
+  color: #ffffff;
+  font-size: 1.8em;
+  font-weight: bold;
+  margin: auto;
+  margin-left: 10px;
+}
+.navbar_choic_flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+}
+.Navbar_pk_text {
+  margin-right: 25px;
+}
+.Navbar_ice_text {
+  margin-right: 25px;
 }
