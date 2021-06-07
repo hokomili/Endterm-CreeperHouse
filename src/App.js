@@ -1,10 +1,16 @@
 import EnterPage from './pages/Enter'
-
+import {BrowserRouter,Switch,Route} from 'react-router-dom';
 import './App.css';
+import './hover.css';
 
 function App() {
   return (
-    <EnterPage/>
+    <BrowserRouter>
+      <Switch>
+        <EnterPage/>
+      </Switch>
+    </BrowserRouter>
+
   );
 }
 

@@ -1,0 +1,93 @@
+@import "~antd/dist/antd.css";
+/* general */
+html {
+  overflow-x: hidden;
+  min-height: 100vh;
+  width: 100vw;
+}
+body {
+  background-color: rgb(214, 214, 214);
+  font-size: 62.5%;
+  font-family: sans-serif;
+}
+/* Enterpage */
+
+.enter_mask {
+  position: relative;
+  z-index: 2;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgb(0, 0, 0);
+  clip-path: polygon(45% 0, 100% 0%, 100% 100%, 60% 100%);
+  display: flex;
+  flex-direction: row-reverse;
+}
+.enter_img {
+  position: absolute;
+  background-image: url(./images/enter_img.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.enter_logo {
+  position: absolute;
+  z-index: 3;
+  right: 0;
+  width: 332px;
+  height: 54px;
+  margin-right: 5%;
+  margin-top: 55px;
+}
+
+
+.enter_r {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 5%;
+  margin-top: 100px;
+
+
+}
+
+.enter_title h3 {
+  font-size: 5.8em;
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+  margin-top: 176px;
+  text-align:center;
+  margin-bottom: 15%;
+}
+
+.enter_r_btn_area{
+  display: flex;
+
+}
+.enter_start_btn {
+  width: 190px;
+  height: 80px;
+
+  margin-right: 40px;
+
+}
+.enter_start_btn h3{
+  font-size: 4em;
+  font-weight: bolder;
+  /* color: #000; */
+  text-align: center;
+  line-height: 80px;
+}
+.enter_login_btn h3{
+  font-size: 3.6em;
+  color: rgb(255, 255, 255);
+  font-weight: bolder;
+  text-align: center;
+  line-height: 72px;
+}
+/* ----------btn效果試驗----------------- */
+.hvr-wobble-horizontal::before{
+  background: #33C754!important;
+}
