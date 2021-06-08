@@ -1,6 +1,6 @@
 import { Layout } from "antd";
-import HomeHeader from "../components/Home/Header";
-import HomeContent from "../components/Home/Content";
+
+import HomeContent from "../components/HomeContent";
 import HomeNavbar from "../components/Navbar";
 import HomeTitlebar from "../components/Titlebar";
 import HomeFooter from "../components/Footer";
@@ -17,10 +17,10 @@ function Home() {
   return (
     <Layout>
       <HomeNavbar/>
-      {/* <HomeTitlebar />
-      <HomeHeader />
+      <HomeTitlebar />
+
       <HomeContent />
-      <HomeFooter /> */}
+      <HomeFooter />
     </Layout>
   );
 }
