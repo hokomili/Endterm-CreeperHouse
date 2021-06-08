@@ -18,7 +18,6 @@ function Home() {
     <Layout>
       <HomeNavbar/>
       <HomeTitlebar />
-
       <HomeContent />
       <HomeFooter />
     </Layout>

@@ -18,23 +18,23 @@ export default function Navbar() {
     <div className="Navbar_content">
       <div className="Navbar_a1">
         <img className="Navbar_member_img" src={memberimg} />
-        <div className="Navbar_member_text">
+        <Link to="/LoginPage"className="Navbar_member_text">
           <h3>Log in</h3>
-        </div>
+        </Link>
       </div>
       <div className="Navbar_a2">
-        <div className="Navbar_Home navbar_flex hvr-fade ">
+        <Link to="/HomePage" className="Navbar_Home navbar_flex hvr-fade ">
           <img id="A" className="Navbar_Home_p navbar_ico" src={homeico} />
           <div className="Navbar_w ">
             <h3>Home</h3>
           </div>
-        </div>
-        <div className="Navbar_Mod navbar_flex hvr-fade">
+        </Link>
+        <Link className="Navbar_Mod navbar_flex hvr-fade">
           <img className="Navbar_Mod_p navbar_ico" src={itemico} />
           <div className="Navbar_w">
             <h3>Mods</h3>
           </div>
-        </div>
+        </Link>
         <div className="Navbar_Texture navbar_flex hvr-fade">
           <img className="Navbar_Texture_p navbar_ico" src={itemico} />
           <div className="Navbar_w">

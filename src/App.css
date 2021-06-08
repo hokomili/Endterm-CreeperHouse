@@ -441,16 +441,227 @@ body {
   height: 90px;
   background: #eeeeee;
   margin-left: 247px;
-}
-.FC_flex {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
-  margin-top: 30px;
-  margin-left: 50px;
+  align-items: center;
+}
+.FC_flex {
+  /* align-items: flex-start; */
+  /* margin-top: 30px;
+  margin-left: 50px; */
 }
 .Footer_container h3 {
   color: #000;
   font-size: 1.8em;
+}
+
+/* ----------------------------------------------- */
+/* Login------------------------------------------ */
+.Login_flex {
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.LoginContent_container {
+  margin-left: 247px;
+  height: 70vh;
+}
+.logC_a1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.logC_title {
+  margin-top: 20px;
+}
+.logC_title h3 {
+  font-weight: bolder;
+  font-size: 3.6em;
+  line-height: 42px;
+  /* display: flex;
+  align-items: flex-end; */
+  text-align: center;
+  color: #497554;
+  margin: 0;
+}
+.logC_line {
+  width: 202px;
+  height: 6px;
+
+  background: #497554;
+  margin-top: 15px;
+}
+.logC_a2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.logC_box {
+  width: 632px;
+  height: 330px;
+  background: rgba(41, 168, 76, 0.62);
+  border: 3px solid #000000;
+  box-sizing: border-box;
+  margin-top: 40px;
+  display: flex;
+  flex-direction: row;
+}
+
+.logC_box_l {
+  display: flex;
+  flex-direction: column;
+  margin-left: 50px;
+}
+.logC_form {
+}
+.logC_form p {
+  font-weight: bold;
+  font-size: 2em;
+  line-height: 16px;
+
+  display: flex;
+  align-items: flex-end;
+  text-align: center;
+
+  color: #497554;
+  margin: 0;
+  margin-bottom: 5px;
+  margin-top: 30px;
+}
+.logC_form_input {
+  width: 244px;
+  height: 38px;
+}
+/* .logC_form_fgpwd_flex{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+} */
+.logC_form_fgpwd {
+  font-weight: normal;
+  font-size: 1.4em;
+  line-height: 16px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  color: #d3ffde;
+  margin: 0;
+  margin-top: 5px;
+}
+.logC_form_btn_flex {
+  display: flex;
+  justify-content: center;
+}
+.logC_form_btn {
+  width: 108px;
+  height: 38px;
+
+  background: #497554;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.logC_form_btn h3 {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 21px;
+  display: flex;
+  align-items: flex-end;
+  text-align: center;
+
+  color: #ffffff;
+  margin: 0;
+}
+
+/* ---------------- */
+.logC_box_r {
+  margin-left: 50px;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-around; */
+  align-items: center;
+}
+.logC_r_google {
+  width: 265px;
+  height: 50px;
+  background: #ffb7b7;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 51px;
+}
+.logC_r_google_ico {
+  width: 35px;
+  height: 35px;
+}
+.logC_r_google_text {
+}
+.logC_r_google_text h3 {
+  font-weight: bold;
+  font-size: 2em;
+  line-height: 21px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  color: #ff0000;
+  margin: 0;
+}
+.logC_r_fb {
+  width: 265px;
+  height: 50px;
+  background: #bfd7fa;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 40px;
+}
+.logC_r_fb_ico {
+  width: 35px;
+  height: 35px;
+}
+.logC_r_fb_text {
+}
+.logC_r_fb_text h3 {
+
+  font-weight: bold;
+  font-size: 2em;
+  line-height: 21px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  
+  color: #287EFF;
+  margin: 0;
+}
+.logC_r_signup {
+  width: 108px;
+  height: 38px;
+  background: #497554;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 45px;
+}
+.logC_r_signup h3 {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 21px;
+  display: flex;
+  align-items: flex-end;
+  text-align: center;
+  
+  color: #FFFFFF;
+  margin: 0;
 }
