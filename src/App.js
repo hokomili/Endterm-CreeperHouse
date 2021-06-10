@@ -7,6 +7,8 @@ import SignupPage from './pages/Signup';
 import ForgetpwdPage from './pages/Forgetpwd';
 import ProfilePage from './pages/Profile';
 import FeedPage from './pages/ProfilesFeed';
+import YoutuberPage from './pages/Youtube';
+import YTSinglePage from './pages/YoutubeSingle';
 
 
 
@@ -24,6 +26,8 @@ function App() {
         <Route exact path="/ForgetpwdPage" component={ForgetpwdPage} />
         <Route exact path="/ProfilePage" component={ProfilePage} />
         <Route exact path="/FeedPage" component={FeedPage} />
+        <Route exact path="/YoutuberPage" component={YoutuberPage} />
+        <Route exact path="/YTSinglePage" component={YTSinglePage} />
         
 
       </Switch>

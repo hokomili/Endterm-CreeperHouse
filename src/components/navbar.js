@@ -35,24 +35,24 @@ export default function Navbar() {
             <h3>Mods</h3>
           </div>
         </Link>
-        <div className="Navbar_Texture navbar_flex hvr-fade">
+        <Link className="Navbar_Texture navbar_flex hvr-fade">
           <img className="Navbar_Texture_p navbar_ico" src={itemico} />
           <div className="Navbar_w">
             <h3>Texture</h3>
           </div>
-        </div>
-        <div className="Navbar_Map navbar_flex hvr-fade">
+        </Link>
+        <Link className="Navbar_Map navbar_flex hvr-fade">
           <img className="Navbar_Map_p navbar_ico" src={itemico} />
           <div className="Navbar_w">
             <h3>Maps</h3>
           </div>
-        </div>
-        <div className="Navbar_Youtuber navbar_flex hvr-fade">
+        </Link>
+        <Link to="/YoutuberPage" className="Navbar_Youtuber navbar_flex hvr-fade">
           <img className="Navbar_Youtuber_p navbar_ico" src={ytico} />
           <div className="Navbar_w">
             <h3>Youtuber</h3>
           </div>
-        </div>
+        </Link>
         <div className="Navbar_Social">
           <img className="Navbar_twitter hvr-pulse-grow" src={twrico} />
           <img className="Navbar_facebook hvr-pulse-grow" src={fbico} />
