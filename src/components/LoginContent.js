@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import fbbtn from "../images/icon/fb_btn.png";
 import googlebtn from "../images/icon/google_btn.png";
 
@@ -30,18 +31,22 @@ export default function LoginContent() {
                 placeholder="Type your password"
               />
 
-              <h3 className="logC_form_fgpwd">forget password?</h3>
+              <Link to="/ForgetpwdPage" className="logC_form_fgpwd">
+                forget password?
+              </Link>
               <div className="logC_form_btn_flex">
-                <button type="button" className="logC_form_btn">
-                  <h3>LOG IN</h3>
-                </button>
+                <Link to="/ProfilePage">
+                  <button type="button" className="logC_form_btn">
+                    <h3>LOG IN</h3>
+                  </button>
+                </Link>
               </div>
             </form>
           </div>
 
           <div className="logC_box_r">
             <button className="logC_r_google">
-              <img className="logC_r_google_ico" src={googlebtn}/>
+              <img className="logC_r_google_ico" src={googlebtn} />
               <div className="logC_r_google_text">
                 <h3>sign in with google</h3>
               </div>
@@ -49,12 +54,14 @@ export default function LoginContent() {
             <button className="logC_r_fb">
               <img className="logC_r_fb_ico" src={fbbtn} />
               <div className="logC_r_fb_text">
-                <h3>sign in with google</h3>
+                <h3>sign in with facebook</h3>
               </div>
             </button>
-            <button className="logC_r_signup">
+            <Link to="/SignupPage">
+              <button className="logC_r_signup">
                 <h3>SIGN UP</h3>
-            </button>
+              </button>
+            </Link>
           </div>
         </div>
       </div>
