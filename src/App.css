@@ -973,7 +973,7 @@ body {
   margin-top: 20px;
 }
 .PrfC_view_box {
-  width: 1027px;
+  width: 100%;
   height: 1162px;
   background: #eeeeee;
   margin-bottom: 50px;
