@@ -9,6 +9,8 @@ import ProfilePage from './pages/Profile';
 import FeedPage from './pages/ProfilesFeed';
 import YoutuberPage from './pages/Youtube';
 import YTSinglePage from './pages/YoutubeSingle';
+import CategoryPage from './pages/Category';
+
 
 
 
@@ -28,6 +30,7 @@ function App() {
         <Route exact path="/FeedPage" component={FeedPage} />
         <Route exact path="/YoutuberPage" component={YoutuberPage} />
         <Route exact path="/YTSinglePage" component={YTSinglePage} />
+        <Route exact path="/CategoryPage" component={CategoryPage} />
         
 
       </Switch>

@@ -9,7 +9,7 @@ function Profile() {
   return (
     <Layout className="container">
       <Navbar />
-      <div className="Login_flex">
+      <div className="gobal_content_flex">
         <Titlebar />
         <ProfileContent />
         <Footer />

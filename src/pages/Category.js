@@ -2,20 +2,27 @@ import { Layout } from "antd";
 
 import Navbar from "../components/Navbar";
 import Titlebar from "../components/Titlebar";
-import YoutubeContent from "../components/YoutubeContent";
+
+import ProductHeader from "../components/ProductHeader";
+
+import ProductList from "../components/ProductList";
 import Footer from "../components/Footer";
 
-function Youtube() {
+function Category() {
   return (
     <Layout className="container">
       <Navbar />
       <div className="gobal_content_flex">
         <Titlebar />
-        <YoutubeContent />
+        
+        <ProductHeader />
+        <ProductList />
+        
+
         <Footer />
       </div>
     </Layout>
   );
 }
 
-export default Youtube;
+export default Category;

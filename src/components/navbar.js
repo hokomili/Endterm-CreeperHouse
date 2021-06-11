@@ -29,7 +29,7 @@ export default function Navbar() {
             <h3>Home</h3>
           </div>
         </Link>
-        <Link className="Navbar_Mod navbar_flex hvr-fade">
+        <Link to="/CategoryPage" className="Navbar_Mod navbar_flex hvr-fade">
           <img className="Navbar_Mod_p navbar_ico" src={itemico} />
           <div className="Navbar_w">
             <h3>Mods</h3>
