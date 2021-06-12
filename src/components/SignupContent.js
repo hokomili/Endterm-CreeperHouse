@@ -10,6 +10,13 @@ export default function SignupContent() {
         <div className="SingC_a2">
           <div className="SingC_box">
             <form action="/formprocess.php" method="post" className="logC_form">
+              <p>Name:</p>
+              <input
+                name="Name"
+                type="text"
+                className="logC_form_input"
+                placeholder="Type your name"
+              />
               <p>Email:</p>
               <input
                 name="Email"

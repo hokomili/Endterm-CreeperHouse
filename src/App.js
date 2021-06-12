@@ -10,7 +10,7 @@ import FeedPage from './pages/ProfilesFeed';
 import YoutuberPage from './pages/Youtube';
 import YTSinglePage from './pages/YoutubeSingle';
 import CategoryPage from './pages/Category';
-
+import ProductPage from './pages/Product';
 
 
 
@@ -31,7 +31,7 @@ function App() {
         <Route exact path="/YoutuberPage" component={YoutuberPage} />
         <Route exact path="/YTSinglePage" component={YTSinglePage} />
         <Route exact path="/CategoryPage" component={CategoryPage} />
-        
+        <Route exact path="/ProductPage" component={ProductPage} />
 
       </Switch>
     </BrowserRouter>
