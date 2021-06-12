@@ -1046,8 +1046,17 @@ body {
   margin-top: 20px;
 }
 .YTC_Content {
+
+}
+/* ------- */
+.YoutuberList_container{
   min-height: 50vh;
-  margin-top: 70px;
+  margin-top: 40px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-bottom: 50px;
 }
 /* ------------ */
 .YTC_Item {
@@ -1058,6 +1067,8 @@ body {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 .YTC_Il {
   display: flex;
@@ -1392,11 +1403,14 @@ body {
   margin-left: 247px;
 
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-self: center;
+  justify-content: space-around;
   width: 60%;
   min-height: 60vh;
-  margin-top: 50px;
+  margin-top: 30px;
+  flex-wrap: wrap; 
+  margin-bottom: 50px;
 }
 
 /* ----ProductItem_container--------------------- */
@@ -1405,6 +1419,8 @@ body {
   height: 290px;
   background: #497554;
   border-radius: 8px 8px 8px 8px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 .pdI_img {
   width: 284px;
