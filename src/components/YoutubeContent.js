@@ -15,16 +15,16 @@ export default function Youtube() {
       <div className="YTC_a2">
         <div className="YT_Carousel">
           <Carousel autoplay>
-            <Link>
+            <Link to="">
               <h3 className="H_Carousel_img">1</h3>
             </Link>
-            <Link>
+            <Link to="">
               <h3 className="H_Carousel_img">2</h3>
             </Link>
-            <Link>
+            <Link to="">
               <h3 className="H_Carousel_img">3</h3>
             </Link>
-            <Link>
+            <Link to="">
               <h3 className="H_Carousel_img">4</h3>
             </Link>
           </Carousel>

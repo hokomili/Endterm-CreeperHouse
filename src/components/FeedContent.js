@@ -22,22 +22,22 @@ export default function ProfileContent() {
             </div>
             <div className="PrfC_Bbox">
                 <div className="PrfC_Bbox_l">
-                    <img className="PrfC_photo" src={peopel}/>
+                    <img className="PrfC_photo" src={peopel} alt=""/>
                     <div className="PrfC_l_text">
                         <h2>Dream</h2>
                         <h4>aabbccdd@mail.com</h4>
                         <div className="PrfC_l_like_area">
-                            <img className="PrfC_l_like_ico" src={like}/>
+                            <img className="PrfC_l_like_ico" src={like} alt=""/>
                             <div className="PrfC_l_like_num">113</div>
                         </div>
                     </div>
                 </div>
                 <div className="PrfC_Bbox_r">
                     <Link to="/ProfilePage"className="PrfC_r_manag_box">
-                        <img className="PrfC_r_manag_ico" src={pfview}/>
+                        <img className="PrfC_r_manag_ico" src={pfview} alt=""/>
                     </Link>
-                    <Link className="PrfC_r_logout_box">
-                        <img className="PrfC_r_logout_ico" src={logout}/>
+                    <Link to="" className="PrfC_r_logout_box">
+                        <img className="PrfC_r_logout_ico" src={logout} alt=""/>
                     </Link>
                 </div>
             </div>
@@ -47,7 +47,7 @@ export default function ProfileContent() {
             <div className="PrfC_view_area">
                 <div className="PrfC_view_box feed_0_flex">
                     <div className="feed_0">
-                        <img className="feed_ico" src={pfupload}/>
+                        <img className="feed_ico" src={pfupload} alt=""/>
                         <div className="feed_box">
                             <h3>UPLOAD</h3>
                         </div>

@@ -35,13 +35,13 @@ export default function Navbar() {
             <h3>Mods</h3>
           </div>
         </Link>
-        <Link className="Navbar_Texture navbar_flex hvr-fade">
+        <Link to="" className="Navbar_Texture navbar_flex hvr-fade">
           <img className="Navbar_Texture_p navbar_ico" src={itemico} />
           <div className="Navbar_w">
             <h3>Texture</h3>
           </div>
         </Link>
-        <Link className="Navbar_Map navbar_flex hvr-fade">
+        <Link to="" className="Navbar_Map navbar_flex hvr-fade">
           <img className="Navbar_Map_p navbar_ico" src={itemico} />
           <div className="Navbar_w">
             <h3>Maps</h3>

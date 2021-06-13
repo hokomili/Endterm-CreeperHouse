@@ -35,7 +35,7 @@ export default function ProfileContent() {
                     <Link to="/FeedPage"className="PrfC_r_manag_box">
                         <img className="PrfC_r_manag_ico" src={manage}/>
                     </Link>
-                    <Link className="PrfC_r_logout_box">
+                    <Link to="" className="PrfC_r_logout_box">
                         <img className="PrfC_r_logout_ico" src={logout}/>
                     </Link>
                 </div>

@@ -15,16 +15,16 @@ export default function ProductHeader() {
       <div className="PHC_a2">
         <div className="PHC_Carousel">
           <Carousel autoplay>
-            <Link>
+            <Link to="">
               <h3 className="PHC_Carousel_img">1</h3>
             </Link>
-            <Link>
+            <Link to="">
               <h3 className="PHC_Carousel_img">2</h3>
             </Link>
-            <Link>
+            <Link to="">
               <h3 className="PHC_Carousel_img">3</h3>
             </Link>
-            <Link>
+            <Link to="">
               <h3 className="PHC_Carousel_img">4</h3>
             </Link>
           </Carousel>
