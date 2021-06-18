@@ -5,10 +5,10 @@ import img1 from "../images/01.jpg";
 export default function ProductItem() {
     return (
         <div className="ProductItem_container">
-            <img className="pdI_img" src={img1}/>
+            <img className="pdI_img" src={'https://drive.google.com/uc?export=view&id=11_S_1PWTIHon9M7Uyty87eKIpXz44MKa'}/>
             <div className="pdI_Text">
                 <div className="pdI_Tex_1">
-                    <h3>Macaw’s Trapdoors</h3>
+                    <h3>The Sword of Master</h3>
                     <div className="pdI_Tag">
                         <h4>Mods</h4>
                     </div>
