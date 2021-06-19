@@ -33,7 +33,7 @@ function App() {
           <Route exact path="/FeedPage" component={FeedPage} />
           <Route exact path="/YoutuberPage" component={YoutuberPage} />
           <Route exact path="/YTSinglePage" component={YTSinglePage} />
-          <Route path="/products/:cate/:productId" component={CategoryPage} />
+          <Route path="/products/:cate/:productId" component={ProductPage} />
           <Route exact path="/ProductPage" component={ProductPage} />
         </Switch>
       </BrowserRouter>
