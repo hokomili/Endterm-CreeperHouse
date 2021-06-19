@@ -11,7 +11,7 @@ export default function ProductList() {
         <>
         {loading
             ? (
-            <div className="spinner-wrap">
+            <div className="ProductList_container spinner-wrap">
                 <Spin indicator={antIcon} className="spinner" />
             </div>
             ) : (

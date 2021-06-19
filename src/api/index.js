@@ -3,6 +3,10 @@ import "firebase/firestore";
 import "firebase/auth";
 import jsonInfo from "../json/jsonInfo.json";
 import products from "../json/products.json";
+import maps from "../json/Maps.json";
+import mods from "../json/Mods.json";
+import textures from "../json/Texture.json";
+import youtubers from "../json/Youtuber.json";
 // Initialize the FirebaseUI Widget using Firebase.
 
 const firebaseConfig = {
@@ -31,8 +35,10 @@ export const getProductById = async (productId) => {
 }
 
 export const getProducts = async (url) => {
+  console.log(url);
   const collection = jsonInfo.find(element => element.url === url);
   const collectionName = collection.name || "allProducts";
+  console.log(collectionName);
   let jsonProducts = [];
 
   // QUERY PRODUCTS
@@ -40,7 +46,7 @@ export const getProducts = async (url) => {
   if (collectionName === "allProducts")
     querySnapshot = await allProductsCollectionRef.get();
   else
-    querySnapshot = await allProductsCollectionRef.where("category", "==", collectionName).get();
+    querySnapshot = await productsDocRef.collection(collectionName).get();
   querySnapshot.forEach((doc) => {
     jsonProducts.push(doc.data());
   });
@@ -61,7 +67,62 @@ export const feedProducts = () => {
     });
   })
 }
+export const feedMaps = () => {
+  maps.forEach((map) => {
+    const docRef = productsDocRef.collection("Maps").doc();
+    const id = docRef.id;
+    // const user = auth.currentUser._id;
 
+    // Store Data for Aggregation Queries
+    docRef.set({
+      ...map,
+      // user,
+      id
+    });
+  })
+}
+export const feedMods = () => {
+  mods.forEach((mod) => {
+    const docRef = productsDocRef.collection("Mods").doc();
+    const id = docRef.id;
+    // const user = auth.currentUser._id;
+
+    // Store Data for Aggregation Queries
+    docRef.set({
+      ...mod,
+      // user,
+      id
+    });
+  })
+}
+export const feedTexture = () => {
+  textures.forEach((texture) => {
+    const docRef = productsDocRef.collection("Texture").doc();
+    const id = docRef.id;
+    // const user = auth.currentUser._id;
+
+    // Store Data for Aggregation Queries
+    docRef.set({
+      ...texture,
+      // user,
+      id
+    });
+  })
+}
+export const feedYoutuber = () => {
+  youtubers.forEach((youtuber) => {
+    const docRef = productsDocRef.collection("Youtuber").doc();
+    const id = docRef.id;
+    // const user = auth.currentUser._id;
+
+    // Store Data for Aggregation Queries
+    docRef.set({
+      ...youtuber,
+      // user,
+      id
+    });
+  })
+}
 export const signInWithEmailPassword = async (email, password) => {
   return await auth.signInWithEmailAndPassword(email, password);
 }

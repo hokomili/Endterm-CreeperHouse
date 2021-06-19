@@ -16,11 +16,11 @@ export default function ProductItem({ product }) {
                         setProductDetail(dispatch, product.id, 1);
                         }}
             >
-                <img className="pdI_img" src={img1}/>
+                <img className="pdI_img" src={product.image}/>
             </Link>
             <div className="pdI_Text">
                 <div className="pdI_Tex_1">
-                    <h3>Macaw’s Trapdoors</h3>
+                    <h3>{product.title}</h3>
                     <div className="pdI_Tag">
                         <h4>Mods</h4>
                     </div>

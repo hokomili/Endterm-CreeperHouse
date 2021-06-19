@@ -49,6 +49,10 @@ import {
   getOrderById,
   getOrderByUser,
   checkLoginApi,
+  feedMaps,
+  feedMods,
+  feedTexture,
+  feedYoutuber,
 } from "../api";
 
 export const addCartItem = (dispatch, product, qty) => {
@@ -89,10 +93,26 @@ export const savePaymentMethod = (dispatch, paymentMethod) => {
   });
 }
 
-export const feedJSONToFirebase = async (dispatch) => {
+export const feedJSONToFirebase = async (dispatch,type) => {
   dispatch({ type: BEGIN_PRODUCTS_FEED });
   try {
-    await feedProducts();
+    switch(type){
+      default:
+        await feedProducts();
+        break;
+      case 1:
+        await feedMaps();
+        break;
+      case 2:
+        await feedMods();
+        break;
+      case 3:
+        await feedTexture();
+        break;
+      case 4:
+        await feedYoutuber();
+        break;
+    }
     dispatch({ type: SUCCESS_PRODUCTS_FEED });
   } catch (error) {
     console.log(error);
@@ -104,19 +124,18 @@ export const setProductDetail = async (dispatch, productId, qty) => {
   dispatch({ type: BEGIN_PRODUCTS_REQUEST });
   try {
     const product = await getProductById(productId);
-    if (qty === 0)
+    /*if (qty === 0)
       dispatch({
         type: SET_PRODUCT_DETAIL,
         payload: {
           product,
         }
       })
-    else
+    else*/
       dispatch({
         type: SET_PRODUCT_DETAIL,
         payload: {
           product,
-          qty,
         }
       })
     dispatch({ type: SUCCESS_PRODUCTS_REQUEST });

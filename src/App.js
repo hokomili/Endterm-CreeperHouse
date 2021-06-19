@@ -11,7 +11,7 @@ import YoutuberPage from './pages/Youtube';
 import YTSinglePage from './pages/YoutubeSingle';
 import CategoryPage from './pages/Category';
 import ProductPage from './pages/Product';
-
+import Feed from './pages/Feed'
 import { StoreProvider } from "./store";
 
 import './App.css';
@@ -23,6 +23,7 @@ function App() {
       <BrowserRouter>
         <Switch>
           <Route exact path="/" component={EnterPage} />
+          <Route exact path="/testfeed" component={Feed} />
           <Route exact path="/category/:pageName" component={CategoryPage} />
           <Route exact path="/homepage" component={HomePage} />
           <Route exact path="/LoginPage" component={LoginPage} />
