@@ -7,13 +7,16 @@ import ytico from "../images/icon/youtube_ico.png";
 import twrico from "../images/icon/twitter_ico.png";
 import fbico from "../images/icon/fb_ico.png";
 import dscico from "../images/icon/discord_ico.png";
+import NavItem from "./NavItem";
+import { useState, useContext } from "react";
+import { StoreContext } from "../store";
 
 export default function Navbar() {
   // function name1() {
   //     document.getElementById("A").style="background-color:red;";
   //     document.getElementById("A").src={HV_homeico};
   // }
-
+  const { state: { userSignin: { userInfo } } } = useContext(StoreContext);
   return (
     <div className="Navbar_content">
       <div className="Navbar_a1">
@@ -23,36 +26,55 @@ export default function Navbar() {
         </Link>
       </div>
       <div className="Navbar_a2">
-        <Link to="/HomePage" className="Navbar_Home navbar_flex hvr-fade ">
+        <Link to="/" className="Navbar_Home navbar_flex hvr-fade ">
           <img id="A" className="Navbar_Home_p navbar_ico" src={homeico} />
           <div className="Navbar_w ">
             <h3>Home</h3>
           </div>
         </Link>
-        <Link to="/CategoryPage" className="Navbar_Mod navbar_flex hvr-fade">
+        <NavItem
+          to="/category/mods"
+          className="nav-item Navbar_Mod navbar_flex hvr-fade"
+          activeClassName="nav-item--active"
+          title="Mods"
+        >
           <img className="Navbar_Mod_p navbar_ico" src={itemico} />
           <div className="Navbar_w">
             <h3>Mods</h3>
           </div>
-        </Link>
-        <Link to="" className="Navbar_Texture navbar_flex hvr-fade">
+        </NavItem>
+        <NavItem
+          to="/category/texture"
+          className="nav-item Navbar_Texture navbar_flex hvr-fade"
+          activeClassName="nav-item--active"
+          title="Texture"
+        >
           <img className="Navbar_Texture_p navbar_ico" src={itemico} />
           <div className="Navbar_w">
             <h3>Texture</h3>
           </div>
-        </Link>
-        <Link to="" className="Navbar_Map navbar_flex hvr-fade">
+        </NavItem>
+        <NavItem
+          to="/category/maps"
+          className="nav-item Navbar_Map navbar_flex hvr-fade"
+          activeClassName="nav-item--active"
+          title="Maps"
+        >
           <img className="Navbar_Map_p navbar_ico" src={itemico} />
           <div className="Navbar_w">
             <h3>Maps</h3>
           </div>
-        </Link>
-        <Link to="/YoutuberPage" className="Navbar_Youtuber navbar_flex hvr-fade">
+        </NavItem>
+        <NavItem
+          to="/YoutuberPage"
+          className="nav-item Navbar_Youtuber navbar_flex hvr-fade"
+          activeClassName="nav-item--active"
+        >
           <img className="Navbar_Youtuber_p navbar_ico" src={ytico} />
           <div className="Navbar_w">
             <h3>Youtuber</h3>
           </div>
-        </Link>
+        </NavItem>
         <div className="Navbar_Social">
           <img className="Navbar_twitter hvr-pulse-grow" src={twrico} />
           <img className="Navbar_facebook hvr-pulse-grow" src={fbico} />

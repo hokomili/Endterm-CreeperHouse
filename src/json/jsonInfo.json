@@ -1,0 +1,37 @@
+[
+    {
+       "title": "Creeper House",
+       "name": "allProducts",
+       "url": "/"
+    },
+    {
+        "title": "Creeper House",
+        "name": "home",
+        "url": "/homepage"
+     },
+    {
+       "title": "Maps",
+       "name": "Maps",
+       "url": "/category/maps"
+    },
+    {
+       "title": "Mods",
+       "name": "Mods",
+       "url": "/category/mods"
+    },
+    {
+        "title": "Texture",
+        "name": "Texture",
+        "url": "/category/texture"
+    },
+    {
+       "title": "Youtuber",
+       "name": "Youtuber",
+       "url": "/youtuberpage"
+    },
+    {
+       "title": "Feed JSON Page",
+       "name": "FeedJSONPage",
+       "url": "/feedpage"
+    }
+ ]
