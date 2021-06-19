@@ -1,20 +1,28 @@
 import ProductItem from "../components/ProductItem";
-import { Link } from "react-router-dom";
-
+import {Spin} from "antd";
+import { LoadingOutlined } from '@ant-design/icons';
+import { useContext } from "react";
+import { StoreContext } from "../store";
 
 export default function ProductList() {
+    const { state: { page: { products }, requestProducts: { loading } } } = useContext(StoreContext);
+    const antIcon = <LoadingOutlined style={{ fontSize: 80, color: "#81ff83" }} spin />;
     return (
-        <div className="ProductList_container">
-            <Link to="/ProductPage"><ProductItem/></Link>
-            <Link to="/ProductPage"><ProductItem/></Link>
-            <Link to="/ProductPage"><ProductItem/></Link>
-            <Link to="/ProductPage"><ProductItem/></Link>
-            <Link to="/ProductPage"><ProductItem/></Link>
-            <Link to="/ProductPage"><ProductItem/></Link>
-            <Link to="/ProductPage"><ProductItem/></Link>
-            <Link to="/ProductPage"><ProductItem/></Link>
-            <Link to="/ProductPage"><ProductItem/></Link>
-            <Link to="/ProductPage"><ProductItem/></Link>
-        </div>
-    );}
+        <>
+        {loading
+            ? (
+            <div className="spinner-wrap">
+                <Spin indicator={antIcon} className="spinner" />
+            </div>
+            ) : (
+            <div className="ProductList_container">
+                {products.map(product =>(
+                    <ProductItem product={product} />
+                ))}
+            </div>
+            )
+        }
+        </>
+    );
+}
   

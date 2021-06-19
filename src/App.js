@@ -12,29 +12,31 @@ import YTSinglePage from './pages/YoutubeSingle';
 import CategoryPage from './pages/Category';
 import ProductPage from './pages/Product';
 
-
+import { StoreProvider } from "./store";
 
 import './App.css';
 import './hover.css';
 
 function App() {
   return (
-    <BrowserRouter>
-      <Switch>
-        <Route exact path="/" component={EnterPage} />
-        <Route exact path="/HomePage" component={HomePage} />
-        <Route exact path="/LoginPage" component={LoginPage} />
-        <Route exact path="/SignupPage" component={SignupPage} />
-        <Route exact path="/ForgetpwdPage" component={ForgetpwdPage} />
-        <Route exact path="/ProfilePage" component={ProfilePage} />
-        <Route exact path="/FeedPage" component={FeedPage} />
-        <Route exact path="/YoutuberPage" component={YoutuberPage} />
-        <Route exact path="/YTSinglePage" component={YTSinglePage} />
-        <Route exact path="/CategoryPage" component={CategoryPage} />
-        <Route exact path="/ProductPage" component={ProductPage} />
-
-      </Switch>
-    </BrowserRouter>
+    <StoreProvider>
+      <BrowserRouter>
+        <Switch>
+          <Route exact path="/" component={EnterPage} />
+          <Route exact path="/category/:pageName" component={CategoryPage} />
+          <Route exact path="/homepage" component={HomePage} />
+          <Route exact path="/LoginPage" component={LoginPage} />
+          <Route exact path="/SignupPage" component={SignupPage} />
+          <Route exact path="/ForgetpwdPage" component={ForgetpwdPage} />
+          <Route exact path="/ProfilePage" component={ProfilePage} />
+          <Route exact path="/FeedPage" component={FeedPage} />
+          <Route exact path="/YoutuberPage" component={YoutuberPage} />
+          <Route exact path="/YTSinglePage" component={YTSinglePage} />
+          <Route path="/products/:cate/:productId" component={CategoryPage} />
+          <Route exact path="/ProductPage" component={ProductPage} />
+        </Switch>
+      </BrowserRouter>
+    </StoreProvider>
 
   );
 }
