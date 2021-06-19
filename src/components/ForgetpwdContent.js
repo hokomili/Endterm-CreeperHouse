@@ -7,7 +7,7 @@ export default function ForgerPwd() {
       <div className="ForgetpwdContent_container">
         <div className="logC_a1">
           <div className="logC_title">
-            <h3>Forget Password</h3>
+            <h3>Forgot Password</h3>
           </div>
           <div className="logC_line"></div>
         </div>

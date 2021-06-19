@@ -32,7 +32,7 @@ export default function LoginContent() {
               />
 
               <Link to="/ForgetpwdPage" className="logC_form_fgpwd">
-                forget password?
+                forgot password?
               </Link>
               <div className="logC_form_btn_flex">
                 <Link to="/ProfilePage">
@@ -51,16 +51,8 @@ export default function LoginContent() {
                 <h3>sign in with google</h3>
               </div>
             </button>
-            <button className="logC_r_fb">
-              <img className="logC_r_fb_ico" src={fbbtn} />
-              <div className="logC_r_fb_text">
-                <h3>sign in with facebook</h3>
-              </div>
-            </button>
             <Link to="/SignupPage">
-              <button className="logC_r_signup">
-                <h3>SIGN UP</h3>
-              </button>
+                  <h3 className="account_text">Creat an account?</h3>
             </Link>
           </div>
         </div>
