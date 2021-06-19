@@ -3,12 +3,12 @@ import { Link } from "react-router-dom";
 import ProductNavbar from "../components/ProductNavbar";
 
 
-export default function ProductHeader() {
+export default function ProductHeader({title}) {
   return (
     <div className="ProductHeader_container">
       <div className="PrfC_a1">
         <div className="PrfC_title">
-          <h3>Mods</h3>
+          <h3>{title}</h3>
         </div>
         <div className="PHC_line"></div>
       </div>
