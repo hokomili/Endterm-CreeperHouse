@@ -30,7 +30,7 @@ export default function Navbar() {
       localStorage.removeItem("userInfo");
   }, [userInfo, remember]);
   return (
-    <div className="Navbar_content">
+    <div className="Navbar_content" id="NAV">
       <div className="Navbar_a1">
         <div onClick={goToProfile} className="navbar_flex Navbar_member_text" >
           {userInfo
@@ -46,7 +46,7 @@ export default function Navbar() {
         </div>
       </div>
       <div className="Navbar_a2">
-        <Link to="/" className="Navbar_Home navbar_flex hvr-fade ">
+        <Link to="/homepage" className="Navbar_Home navbar_flex hvr-fade ">
           <img id="A" className="Navbar_Home_p navbar_ico" src={homeico} />
           <div className="Navbar_w ">
             <h3>Home</h3>

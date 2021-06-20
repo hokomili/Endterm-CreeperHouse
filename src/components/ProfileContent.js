@@ -6,6 +6,7 @@ import manage from "../images/icon/manage_ico.png";
 import React, { useContext, useEffect } from "react";
 import { logoutFromFirebase, updateUserInfo, getUserOrders } from "../actions";
 import { StoreContext } from "../store";
+import ProfileContentList from "../components/ProfileContentList";
 
 export default function ProfileContent() {
     const { state: { userSignin: { userInfo }, userOrders, }, dispatch, } = useContext(StoreContext);
@@ -16,13 +17,12 @@ export default function ProfileContent() {
         history.push("/homepage");
     };
   return (
-
-      <div className="ProfileContent_container">
+    <div className="ProfileContent_container">
         <div className="PrfC_a1">
-          <div className="PrfC_title">
-            <h3>My  Account</h3>
-          </div>
-          <div className="PrfC_line"></div>
+            <div className="PrfC_title">
+                <h3>My Account</h3>
+            </div>
+            <div className="PrfC_line"></div>
         </div>
         <div className="PrfC_a2">
             <div className="PrfC_Sbox">
@@ -30,19 +30,22 @@ export default function ProfileContent() {
             </div>
             <div className="PrfC_Bbox">
                 <div className="PrfC_Bbox_l">
-                    <img className="PrfC_photo" src={peopel}/>
+                    <img className="PrfC_photo" src={peopel} />
                     <div className="PrfC_l_text">
-                        <h2>Dream</h2>
-                        <h4>aabbccdd@mail.com</h4>
-                        <div className="PrfC_l_like_area">
-                            <img className="PrfC_l_like_ico" src={like}/>
-                            <div className="PrfC_l_like_num">113</div>
-                        </div>
+                    <h2>Dream</h2>
+                    <h4>aabbccdd@mail.com</h4>
+                    <div className="PrfC_l_like_area">
+                        <img className="PrfC_l_like_ico" src={like} />
+                        <div className="PrfC_l_like_num">113</div>
+                    </div>
                     </div>
                 </div>
                 <div className="PrfC_Bbox_r">
-                    <Link to="/FeedPage"className="PrfC_r_manag_box">
-                        <img className="PrfC_r_manag_ico" src={manage}/>
+                    <div className="PrfC_Sbox_RWD">
+                    <h3>Profile</h3>
+                    </div>
+                    <Link to="/FeedPage" className="PrfC_r_manag_box">
+                    <img className="PrfC_r_manag_ico" src={manage} />
                     </Link>
                     <div onClick={handleLogout} className="PrfC_r_logout_box">
                         <img className="PrfC_r_logout_ico" src={logout}/>
@@ -51,9 +54,12 @@ export default function ProfileContent() {
             </div>
         </div>
         <div className="PrfC_a3">
+            <div className="RWD_choose_area">
+                <div></div>
+            </div>
             <div className="PrfC_choose_area">
                 <div className="PrfC_cho_box PrfC_cho_hv">
-                    <h3 >All</h3>
+                    <h3>All</h3>
                 </div>
                 <div className="PrfC_cho_box PrfC_cho_hv">
                     <h3>Mods</h3>
@@ -67,12 +73,10 @@ export default function ProfileContent() {
             </div>
             <div className="PrfC_view_area">
                 <div className="PrfC_view_box">
-
+                    <ProfileContentList/>
                 </div>
             </div>
         </div>
-
-      </div>
-
+    </div>
   );
 }
