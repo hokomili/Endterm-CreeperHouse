@@ -88,9 +88,10 @@ export default function Navbar() {
           </div>
         </NavItem>
         <NavItem
-          to="/YoutuberPage"
+          to="/youtuberpage"
           className="nav-item Navbar_Youtuber navbar_flex hvr-fade"
           activeClassName="nav-item--active"
+          title="Youtuber"
         >
           <img className="Navbar_Youtuber_p navbar_ico" src={ytico} />
           <div className="Navbar_w">

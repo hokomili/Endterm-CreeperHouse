@@ -30,6 +30,11 @@
        "url": "/youtuberpage"
     },
     {
+      "title": "Youtuber",
+      "name": "Youtuber",
+      "url": "/ytsinglepage"
+   },
+    {
        "title": "Feed JSON Page",
        "name": "FeedJSONPage",
        "url": "/feedpage"
