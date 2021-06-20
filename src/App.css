@@ -1,11 +1,6 @@
 @import "~antd/dist/antd.css";
 /* general */
 html {
-  overflow-x: hidden;
-  min-height: 100vh;
-  width: 100vw;
-}
-body {
   --purewhite:rgb(255, 255, 255);
   --pureblack:rgb(0, 0, 0);
   --color1:#33c754;
@@ -17,6 +12,12 @@ body {
   --color7:#4b2b07;
   --color8:#ffa600;
   --color9:rgba(207, 199, 199, 0.32);
+  overflow-x: hidden;
+  min-height: 100vh;
+  width: 100vw;
+}
+body {
+  
   background-color: rgb(214, 214, 214);
   font-size: 62.5%;
   font-family: sans-serif;

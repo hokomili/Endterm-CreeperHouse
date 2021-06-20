@@ -10,6 +10,7 @@ import dscico from "../images/icon/discord_ico.png";
 import NavItem from "./NavItem";
 import { useState,useEffect,useContext } from "react";
 import { StoreContext } from "../store";
+import { changeColor } from "../utils";
 
 export default function Navbar() {
   // function name1() {
@@ -18,9 +19,6 @@ export default function Navbar() {
   // }
   const { state: { userSignin : { userInfo, remember } } } = useContext(StoreContext);
   const history = useHistory();
-  const changeColor = () =>{
-    
-  }
   const goToProfile = () => {
     history.push("/loginpage?redirect=profilepage");
   };
