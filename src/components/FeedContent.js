@@ -6,7 +6,7 @@ import pfview from "../images/icon/pfview_ico.png";
 import pfupload from "../images/icon/upload_ico.png";
 
 
-export default function ProfileContent() {
+export default function FeedContent() {
   return (
 
       <div className="ProfileContent_container">
@@ -33,6 +33,9 @@ export default function ProfileContent() {
                     </div>
                 </div>
                 <div className="PrfC_Bbox_r">
+                    <div className="PrfC_Sbox_RWD">
+                    <h3>Management</h3>
+                    </div>
                     <Link to="/ProfilePage"className="PrfC_r_manag_box">
                         <img className="PrfC_r_manag_ico" src={pfview} alt=""/>
                     </Link>

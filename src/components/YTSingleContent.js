@@ -15,6 +15,7 @@ export default function YTContentS() {
       <div className="YTS_a2">
         <div className="YTS_l">
           <iframe
+            className="YTS_RWD_hight"
             width="100%"
             height="380px"
             src="https://www.youtube.com/embed/grIIxQ25pWM"

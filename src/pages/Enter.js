@@ -4,7 +4,7 @@ import logo from "../images/logo/white_logo.png";
 
 function Enter() {
   return (
-    <Layout>
+    <Layout className="enter_layout">
       <img className="enter_logo" src={logo}></img>
       <div className="enter_mask">
         <div className="enter_r">
