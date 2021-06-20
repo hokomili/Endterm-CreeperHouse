@@ -1,5 +1,21 @@
-import { Link } from "react-router-dom";
-export default function SignupContent() {
+import { Link,useHistory } from "react-router-dom";
+import React, { useContext, useEffect } from 'react';
+import { registerToFirebase } from '../actions'
+import { StoreContext } from "../store"
+
+export default function SignupContent({ redirect }) {
+  const { state: { userRegister: { userInfo, loading, error } }, dispatch } = useContext(StoreContext);
+  const history = useHistory();
+
+  const onFinish = async (values) => {
+    values.preventDefault();
+    console.log('Received values of form: ', values.target.elements);
+    await registerToFirebase(dispatch, values.target.elements);
+  };
+
+  /*useEffect(() => {
+    if (userInfo) history.push(redirect);
+  }, [userInfo]);// eslint-disable-line react-hooks/exhaustive-deps*/
   return (
     <div className="SignupContent_container">
       <div className="logC_a1">
@@ -9,17 +25,17 @@ export default function SignupContent() {
         <div className="logC_line"></div>
         <div className="SingC_a2">
           <div className="SingC_box">
-            <form action="/formprocess.php" method="post" className="logC_form">
+            <form onSubmit={onFinish} className="logC_form">
               <p>Name:</p>
               <input
-                name="Name"
+                name="name"
                 type="text"
                 className="logC_form_input"
                 placeholder="Type your name"
               />
               <p>Email:</p>
               <input
-                name="Email"
+                name="email"
                 type="text"
                 className="logC_form_input"
                 placeholder="Type your email"
@@ -27,7 +43,7 @@ export default function SignupContent() {
 
               <p>Password:</p>
               <input
-                name="Password"
+                name="password"
                 type="password"
                 className="logC_form_input"
                 placeholder="Type your password"
@@ -35,14 +51,14 @@ export default function SignupContent() {
 
               <p>Confirm Password:</p>
               <input
-                name="Password"
+                name="confirm"
                 type="password"
                 className="logC_form_input"
                 placeholder="Type your password"
               />
 
               <div className="logC_form_btn_flex">
-                <button type="button" className="logC_form_btn">
+                <button type="submit" className="logC_form_btn">
                   <h3>Sign UP</h3>
                 </button>
               </div>

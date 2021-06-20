@@ -1,8 +1,27 @@
-import { Link } from "react-router-dom";
+import { Link,useHistory } from "react-router-dom";
 import fbbtn from "../images/icon/fb_btn.png";
 import googlebtn from "../images/icon/google_btn.png";
+import React, { useContext, useEffect } from "react";
+import { checkLogin, loginToFirebase, rememberLoginUser } from '../actions'
+import { StoreContext } from "../store"
 
-export default function LoginContent() {
+export default function LoginContent({redirect}) {
+  const { state:{ userSignin: { userInfo, loading, error, remember } }, dispatch } = useContext(StoreContext);
+  const history = useHistory();
+ 
+  const onFinish = async (values) => {
+    values.preventDefault();
+    console.log('Received values of form: ', values.target.elements);
+    await loginToFirebase(dispatch, values.target.elements);
+  };
+
+  const onChange = e => {
+    rememberLoginUser(dispatch, e.target.checked);
+  }
+
+  useEffect(() => {    
+    if( userInfo && checkLogin(dispatch) ) history.push(redirect);
+  }, [ userInfo ]);// eslint-disable-line react-hooks/exhaustive-deps
   return (
     <div className="LoginContent_container">
       <div className="logC_a1">
@@ -14,10 +33,10 @@ export default function LoginContent() {
       <div className="logC_a2">
         <div className="logC_box">
           <div className="logC_box_l">
-            <form action="/formprocess.php" method="post" className="logC_form">
+            <form onSubmit={onFinish} className="logC_form">
               <p>Email:</p>
               <input
-                name="Email"
+                name="email"
                 type="text"
                 className="logC_form_input"
                 placeholder="Type your email"
@@ -25,7 +44,7 @@ export default function LoginContent() {
 
               <p>Password:</p>
               <input
-                name="Password"
+                name="password"
                 type="password"
                 className="logC_form_input"
                 placeholder="Type your password"
@@ -35,11 +54,9 @@ export default function LoginContent() {
                 forgot password?
               </Link>
               <div className="logC_form_btn_flex">
-                <Link to="/ProfilePage">
-                  <button type="button" className="logC_form_btn">
-                    <h3>LOG IN</h3>
-                  </button>
-                </Link>
+                <button type="submit" className="logC_form_btn">
+                  <h3>LOG IN</h3>
+                </button>
               </div>
             </form>
           </div>

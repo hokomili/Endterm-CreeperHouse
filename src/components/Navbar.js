@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link,useHistory  } from "react-router-dom";
 import memberimg from "../images/icon/member_ico.png";
 import homeico from "../images/icon/home_ico.png";
 import HV_homeico from "../images/icon/hv_home_ico.png";
@@ -8,7 +8,7 @@ import twrico from "../images/icon/twitter_ico.png";
 import fbico from "../images/icon/fb_ico.png";
 import dscico from "../images/icon/discord_ico.png";
 import NavItem from "./NavItem";
-import { useState, useContext } from "react";
+import { useState,useEffect,useContext } from "react";
 import { StoreContext } from "../store";
 
 export default function Navbar() {
@@ -16,14 +16,34 @@ export default function Navbar() {
   //     document.getElementById("A").style="background-color:red;";
   //     document.getElementById("A").src={HV_homeico};
   // }
-  const { state: { userSignin: { userInfo } } } = useContext(StoreContext);
+  const { state: { userSignin : { userInfo, remember } } } = useContext(StoreContext);
+  const history = useHistory();
+
+  const goToProfile = () => {
+    history.push("/loginpage?redirect=profilepage");
+  };
+
+  useEffect(() => {
+    if(remember)
+        localStorage.setItem("userInfo", JSON.stringify(userInfo));
+    else
+      localStorage.removeItem("userInfo");
+  }, [userInfo, remember]);
   return (
     <div className="Navbar_content">
       <div className="Navbar_a1">
-        <img className="Navbar_member_img" src={memberimg} />
-        <Link to="/LoginPage"className="Navbar_member_text">
-          <h3>Log in</h3>
-        </Link>
+        <div onClick={goToProfile} className="navbar_flex Navbar_member_text" >
+          {userInfo
+              ? <img className="Navbar_member_img" src={memberimg} />
+              : <img className="Navbar_member_img" src={memberimg} />
+          }
+          <h3>
+            {userInfo
+              ? `${userInfo.displayName}`
+              : `Log in`
+            }
+          </h3>
+        </div>
       </div>
       <div className="Navbar_a2">
         <Link to="/" className="Navbar_Home navbar_flex hvr-fade ">

@@ -174,7 +174,7 @@ export const setPage = async (dispatch, url, title) => {
 export const loginToFirebase = async (dispatch, userInfo) => {
   dispatch({ type: BEGIN_LOGIN_REQUEST });
   try {
-    const user = await signInWithEmailPassword(userInfo.email, userInfo.password);
+    const user = await signInWithEmailPassword(userInfo.email.value, userInfo.password.value);
     dispatch({
       type: SUCCESS_LOGIN_REQUEST,
       payload: user.user.providerData[0],
@@ -200,7 +200,8 @@ export const rememberLoginUser = (dispatch, remember) => {
 export const registerToFirebase = async (dispatch, userInfo) => {
   dispatch({ type: BEGIN_REGISTER_REQUEST });
   try {
-    const user = await registerWithEmailPassword(userInfo.email, userInfo.password, userInfo.name);
+    console.log(userInfo.email)
+    const user = await registerWithEmailPassword(userInfo.email.value, userInfo.password.value, userInfo.name.value);
     console.log(user)
     dispatch({
       type: SUCCESS_REGISTER_REQUEST,

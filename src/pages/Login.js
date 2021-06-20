@@ -7,6 +7,7 @@ import Footer from "../components/Footer";
 
 function Login(props) {
   const { redirect } = QueryString.parse(props.location.search);
+  console.log(redirect);
   return (
     <Layout className="container">
       <Navbar />

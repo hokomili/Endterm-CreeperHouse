@@ -26,15 +26,15 @@ function App() {
           <Route exact path="/testfeed" component={Feed} />
           <Route exact path="/category/:pageName" component={CategoryPage} />
           <Route exact path="/homepage" component={HomePage} />
-          <Route exact path="/LoginPage" component={LoginPage} />
-          <Route exact path="/SignupPage" component={SignupPage} />
-          <Route exact path="/ForgetpwdPage" component={ForgetpwdPage} />
-          <Route exact path="/ProfilePage" component={ProfilePage} />
-          <Route exact path="/FeedPage" component={FeedPage} />
-          <Route exact path="/YoutuberPage" component={YoutuberPage} />
-          <Route exact path="/YTSinglePage" component={YTSinglePage} />
+          <Route exact path="/loginpage" component={LoginPage} />
+          <Route exact path="/signuppage" component={SignupPage} />
+          <Route exact path="/forgetpwdpage" component={ForgetpwdPage} />
+          <Route exact path="/profilepage" component={ProfilePage} />
+          <Route exact path="/feedpage" component={FeedPage} />
+          <Route exact path="/youtuberpage" component={YoutuberPage} />
+          <Route exact path="/ytSinglepage" component={YTSinglePage} />
           <Route path="/products/:cate/:productId" component={ProductPage} />
-          <Route exact path="/ProductPage" component={ProductPage} />
+          <Route exact path="/Productpage" component={ProductPage} />
         </Switch>
       </BrowserRouter>
     </StoreProvider>
