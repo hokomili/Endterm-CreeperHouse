@@ -30,10 +30,13 @@ export default function ProfileContent() {
             </div>
             <div className="PrfC_Bbox">
                 <div className="PrfC_Bbox_l">
-                    <img className="PrfC_photo" src={peopel} />
+                    {userInfo.photoURL
+                    ? <img className="PrfC_photo" src={userInfo.photoURL} />
+                    : <img className="PrfC_photo" src={peopel} />
+                    }
                     <div className="PrfC_l_text">
-                    <h2>Dream</h2>
-                    <h4>aabbccdd@mail.com</h4>
+                    <h2>{userInfo.displayName}</h2>
+                    <h4>{userInfo.email}</h4>
                     <div className="PrfC_l_like_area">
                         <img className="PrfC_l_like_ico" src={like} />
                         <div className="PrfC_l_like_num">113</div>

@@ -34,7 +34,9 @@ export default function Navbar() {
       <div className="Navbar_a1">
         <div onClick={goToProfile} className="navbar_flex Navbar_member_text" >
           {userInfo
-              ? <img className="Navbar_member_img" src={memberimg} />
+              ? userInfo.photoURL
+                ? <img className="Navbar_member_img" src={userInfo.photoURL} />
+                : <img className="Navbar_member_img" src={memberimg} />
               : <img className="Navbar_member_img" src={memberimg} />
           }
           <h3>
