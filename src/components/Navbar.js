@@ -18,7 +18,7 @@ export default function Navbar() {
   // }
   const { state: { userSignin: { userInfo } } } = useContext(StoreContext);
   return (
-    <div className="Navbar_content">
+    <div className="Navbar_content" id="NAV">
       <div className="Navbar_a1">
         <img className="Navbar_member_img" src={memberimg} />
         <Link to="/LoginPage"className="Navbar_member_text">
@@ -26,7 +26,7 @@ export default function Navbar() {
         </Link>
       </div>
       <div className="Navbar_a2">
-        <Link to="/" className="Navbar_Home navbar_flex hvr-fade ">
+        <Link to="/homepage" className="Navbar_Home navbar_flex hvr-fade ">
           <img id="A" className="Navbar_Home_p navbar_ico" src={homeico} />
           <div className="Navbar_w ">
             <h3>Home</h3>
