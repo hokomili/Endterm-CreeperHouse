@@ -1,11 +1,20 @@
-import {Link} from "react-router-dom";
+import {Link,useHistory } from "react-router-dom";
 import peopel from "../images/people1.png";
 import like from "../images/icon/like_ico.png";
 import logout from "../images/icon/logout_ico.png";
 import manage from "../images/icon/manage_ico.png";
-
+import React, { useContext, useEffect } from "react";
+import { logoutFromFirebase, updateUserInfo, getUserOrders } from "../actions";
+import { StoreContext } from "../store";
 
 export default function ProfileContent() {
+    const { state: { userSignin: { userInfo }, userOrders, }, dispatch, } = useContext(StoreContext);
+    const { displayName, email } = userInfo;
+    const history = useHistory();
+    const handleLogout = () => {
+        logoutFromFirebase(dispatch);
+        history.push("/homepage");
+    };
   return (
 
       <div className="ProfileContent_container">
@@ -35,9 +44,9 @@ export default function ProfileContent() {
                     <Link to="/FeedPage"className="PrfC_r_manag_box">
                         <img className="PrfC_r_manag_ico" src={manage}/>
                     </Link>
-                    <Link to="" className="PrfC_r_logout_box">
+                    <div onClick={handleLogout} className="PrfC_r_logout_box">
                         <img className="PrfC_r_logout_ico" src={logout}/>
-                    </Link>
+                    </div>
                 </div>
             </div>
         </div>

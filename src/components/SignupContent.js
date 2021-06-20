@@ -13,9 +13,9 @@ export default function SignupContent({ redirect }) {
     await registerToFirebase(dispatch, values.target.elements);
   };
 
-  /*useEffect(() => {
-    if (userInfo) history.push(redirect);
-  }, [userInfo]);// eslint-disable-line react-hooks/exhaustive-deps*/
+  useEffect(() => {
+    if (userInfo) history.push("/homepage");
+  }, [userInfo]);// eslint-disable-line react-hooks/exhaustive-deps
   return (
     <div className="SignupContent_container">
       <div className="logC_a1">
