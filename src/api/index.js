@@ -28,9 +28,9 @@ const allOrdersCollectionRef = firebase.firestore().collection("allOrders");
 //REFERENCE AUTH
 const auth = firebase.auth();
 
-export const getProductById = async (productId) => {
+export const getProductById = async (productId,category) => {
   // REFERENCE PRODUCTS COLLECTION
-  const doc = await allProductsCollectionRef.doc(productId).get();
+  const doc = await productsDocRef.collection(category).doc(productId).get();
   return doc.data()
 }
 

@@ -120,10 +120,10 @@ export const feedJSONToFirebase = async (dispatch,type) => {
   }
 }
 
-export const setProductDetail = async (dispatch, productId, qty) => {
+export const setProductDetail = async (dispatch, productId,category, ver ,edi) => {
   dispatch({ type: BEGIN_PRODUCTS_REQUEST });
   try {
-    const product = await getProductById(productId);
+    const product = await getProductById(productId,category);
     /*if (qty === 0)
       dispatch({
         type: SET_PRODUCT_DETAIL,
@@ -136,6 +136,8 @@ export const setProductDetail = async (dispatch, productId, qty) => {
         type: SET_PRODUCT_DETAIL,
         payload: {
           product,
+          ver,
+          edi
         }
       })
     dispatch({ type: SUCCESS_PRODUCTS_REQUEST });

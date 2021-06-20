@@ -17,7 +17,7 @@ export default function ProductList() {
             ) : (
             <div className="ProductList_container">
                 {products.map(product =>(
-                    <ProductItem product={product} />
+                    <ProductItem product={product} key={product.id}/>
                 ))}
             </div>
             )

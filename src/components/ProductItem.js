@@ -12,9 +12,9 @@ export default function ProductItem({ product }) {
     return (
         <div className="ProductItem_container">
             <Link to={`/products/${product.category2}/${product.id}`} 
-                    onClick={()=>{
-                        setProductDetail(dispatch, product.id, 1);
-                        }}
+                onClick={()=>{
+                    setProductDetail(dispatch, product.id,product.category2,0,0);
+                }}
             >
                 <img className="pdI_img" src={product.image}/>
             </Link>
@@ -22,12 +22,12 @@ export default function ProductItem({ product }) {
                 <div className="pdI_Tex_1">
                     <h3>{product.title}</h3>
                     <div className="pdI_Tag">
-                        <h4>Mods</h4>
+                        <h4>{product.category2}</h4>
                     </div>
                 </div>
                 <div className="pdI_Tex_2">
                     <p>
-                    Macaw’s Trapdoors adds a wider variety of trapdoors to choose from outside of the vanilla options......
+                    {product.description}
                     </p>
                     <img className="pdI_Likeico" src={LikeSimg}/>
                 </div>
