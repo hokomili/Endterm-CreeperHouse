@@ -10,23 +10,13 @@ body {
   --pureblack:rgb(0, 0, 0);
   --color1:#33c754;
   --color2:#eeeeee;
-  --color3:rgb(11, 138, 106);
+  --color3:#21770b;
   --color4:#359e1a;
-  --color5:rgb(21, 150, 4);
-  --color6:#21770b;
-  --color7:#248a3a;
-  --color8:#29a143;
-  --color9:#497554;
-  --coor10:#4b2b07;
-  --color11:#056e05;
-  --color12:#c5d8ca;
-  --color13:#29a84c;
-  --color14:#e1ffe9;
-  --color15:#e6ffec;
-  --color16:#d3ffde;
-  --color17:#e3ffea;
-  --color18:#ffa600;
-  --color19:rgba(207, 199, 199, 0.32);
+  --color5:#d3ffde;
+  --color6:#497554;
+  --color7:#4b2b07;
+  --color8:#ffa600;
+  --color9:rgba(207, 199, 199, 0.32);
   background-color: rgb(214, 214, 214);
   font-size: 62.5%;
   font-family: sans-serif;
@@ -286,7 +276,7 @@ body {
   left: 2.5px;
   width: 20px;
   height: 20px;
-  background: var(--color5);
+  background: var(--color4);
   border-radius: 99px;
   color: rgb(235, 15, 15);
   font-weight: 400;
@@ -419,7 +409,7 @@ body {
   margin: 0;
 }
 .H_text p span {
-  color: var(--color6);
+  color: var(--color3);
   font-size: 2em;
   font-weight: bold;
 }
@@ -456,10 +446,10 @@ body {
   align-items: center;
   justify-content: center;
   text-align: center;
-  border: solid 5px var(--color7);
+  border: solid 5px var(--color4);
 }
 .H_B_btn:hover {
-  border: outset 5px var(--color8);
+  border: outset 5px var(--color4);
 }
 
 .H_B_btn h3 {
@@ -516,14 +506,14 @@ body {
   /* display: flex;
   align-items: flex-end; */
   text-align: center;
-  color: var(--color9);
+  color: var(--color6);
   margin: 0;
 }
 .logC_line {
   width: 202px;
   height: 6px;
 
-  background: var(--color9);
+  background: var(--color6);
   margin-top: 15px;
 }
 .logC_a2 {
@@ -535,7 +525,7 @@ body {
 .logC_box {
   width: 30%;
 
-  background: var(--color9);
+  background: var(--color6);
   border: 3px solid var(--pureblack);
   box-sizing: border-box;
   margin-top: 40px;
@@ -593,7 +583,7 @@ body {
   width: 108px;
   height: 38px;
 
-  background: var(--color18);
+  background: var(--color8);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -608,7 +598,7 @@ body {
   align-items: flex-end;
   text-align: center;
 
-  color: var(--color10);
+  color: var(--color7);
   margin: 0;
 }
 
@@ -643,7 +633,7 @@ body {
   align-items: center;
   text-align: center;
 
-  color: var(--color11);
+  color: var(--color3);
   margin: 0;
 }
 
@@ -668,7 +658,7 @@ body {
   left: 659px;
   top: 232px;
 
-  background: var(--color9);
+  background: var(--color6);
   border: 3px solid var(--pureblack);
   box-sizing: border-box;
   display: flex;
@@ -722,7 +712,7 @@ body {
 .Forget_a2 {
   width: 393px;
 
-  background: var(--color9);
+  background: var(--color6);
   border: 3px solid var(--pureblack);
   box-sizing: border-box;
   display: flex;
@@ -783,13 +773,13 @@ body {
   display: flex;
   align-items: flex-end;
 
-  color: var(--color9);
+  color: var(--color6);
   margin: 0;
 }
 .PrfC_line {
   width: 202px;
   height: 6px;
-  background: var(--color9);
+  background: var(--color6);
   margin-top: 10px;
 }
 
@@ -800,7 +790,7 @@ body {
 }
 .PrfC_Sbox {
   height: 26px;
-  background: var(--color9);
+  background: var(--color6);
   margin-bottom: 7px;
   display: flex;
   align-items: center;
@@ -823,7 +813,7 @@ body {
 .PrfC_Bbox {
   width: 100%;
   height: 193px;
-  background: var(--color9);
+  background: var(--color6);
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -930,7 +920,7 @@ body {
   width: 111.09px;
   height: 37px;
   background: var(--color2);
-  border: 1.5px solid var(--color12);
+  border: 1.5px solid var(--color5);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -946,12 +936,12 @@ body {
   align-items: center;
   text-align: center;
 
-  color: var(--color6);
+  color: var(--color3);
   margin: 0;
 }
 
 .PrfC_cho_hv:hover {
-  background: var(--color13);
+  background: var(--color4);
 }
 .PrfC_cho_box:hover h3 {
   color: var(--purewhite);
@@ -971,7 +961,7 @@ body {
 .Profile_item {
   width: 260px;
   height: 210px;
-  background: var(--color9);
+  background: var(--color6);
   border-radius: 8px 8px 8px 8px;
   margin-top: 30px;
   margin-bottom: 20px;
@@ -1058,7 +1048,7 @@ body {
 .YTC_line {
   width: 155px;
   height: 4px;
-  background: var(--color9);
+  background: var(--color6);
   margin-top: 10px;
 }
 .YT_Carousel {
@@ -1086,7 +1076,7 @@ body {
 .YTC_Item {
   width: 432px;
   height: 147px;
-  background: var(--color9);
+  background: var(--color6);
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -1116,7 +1106,7 @@ body {
   display: flex;
   align-items: center;
 
-  color: var(--color14);
+  color: var(--color5);
   margin: 0;
 }
 .YTC_people_yt {
@@ -1131,7 +1121,7 @@ body {
   display: flex;
   align-items: center;
 
-  color: var(--color14);
+  color: var(--color5);
   margin: 0;
   margin-left: 10px;
 }
@@ -1169,7 +1159,7 @@ body {
   text-align: center;
 
   margin: 0;
-  color: var(--color14);
+  color: var(--color5);
 }
 /* YTSingle */
 .YTSingle_Container {
@@ -1199,7 +1189,7 @@ body {
 .YTS_intro {
   width: 255px;
   height: 226px;
-  background: var(--color9);
+  background: var(--color6);
 }
 .YTS_intro_people {
   display: flex;
@@ -1237,7 +1227,7 @@ body {
   display: flex;
   align-items: center;
 
-  color: var(--color15);
+  color: var(--color5);
 }
 .YTS_intro_sub h2 {
   font-weight: bold;
@@ -1246,7 +1236,7 @@ body {
   display: flex;
   align-items: center;
 
-  color: var(--color15);
+  color: var(--color5);
   margin-left: 5px;
 }
 .YTS_intro_Hnum {
@@ -1261,7 +1251,7 @@ body {
   display: flex;
   align-items: center;
 
-  color: var(--color15);
+  color: var(--color5);
 }
 .YTS_intro_Hnum h2 {
   font-weight: bold;
@@ -1270,7 +1260,7 @@ body {
   display: flex;
   align-items: center;
 
-  color: var(--color15);
+  color: var(--color5);
   margin-left: 5px;
 }
 .YTS_yt_btn {
@@ -1302,7 +1292,7 @@ body {
 .YTS_Survival_box {
   width: 351px;
   height: 47px;
-  background: var(--color9);
+  background: var(--color6);
   display: flex;
   justify-content: center;
   margin-bottom: 10px;
@@ -1346,7 +1336,7 @@ body {
 .YTS_Mod_box {
   width: 351px;
   height: 47px;
-  background: var(--color9);
+  background: var(--color6);
   display: flex;
   justify-content: center;
   margin-bottom: 10px;
@@ -1393,7 +1383,7 @@ body {
 .PHC_line {
   width: 101px;
   height: 4px;
-  background: var(--color9);
+  background: var(--color6);
   margin-top: 10px;
 }
 .PHC_a2 {
@@ -1441,7 +1431,7 @@ body {
 .ProductItem_container {
   width: 284px;
   height: 290px;
-  background: var(--color9);
+  background: var(--color6);
   border-radius: 8px 8px 8px 8px;
   margin-top: 20px;
   margin-bottom: 20px;
@@ -1478,7 +1468,7 @@ body {
   left: 561px;
   top: 736px;
 
-  background: var(--color16);
+  background: var(--color5);
   border-radius: 10px;
   display: flex;
   justify-content: center;
@@ -1534,7 +1524,7 @@ body {
   line-height: 42px;
   display: flex;
   align-items: flex-end;
-  color: var(--color9);
+  color: var(--color6);
   margin: 0;
 }
 /* a2 */
@@ -1573,7 +1563,7 @@ body {
 .PD_a2_r_box2 {
   width: 242px;
   height: 292px;
-  background: var(--color9);
+  background: var(--color6);
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -1623,7 +1613,7 @@ body {
   display: flex;
   align-items: center;
 
-  color: var(--color17);
+  color: var(--color5);
   margin-right: 10px;
 }
 .PD_view {
@@ -1637,7 +1627,7 @@ body {
   display: flex;
   align-items: center;
 
-  color: var(--color17);
+  color: var(--color5);
   margin-right: 10px;
 }
 .PD_view_block {
@@ -1653,7 +1643,7 @@ body {
   display: flex;
   align-items: center;
 
-  color: var(--color17);
+  color: var(--color5);
 }
 .PD_download {
   display: flex;
@@ -1666,7 +1656,7 @@ body {
   display: flex;
   align-items: center;
 
-  color: var(--color17);
+  color: var(--color5);
   margin-right: 10px;
 }
 .PD_download_block {
@@ -1682,7 +1672,7 @@ body {
   display: flex;
   align-items: center;
 
-  color: var(--color17);
+  color: var(--color5);
 }
 .PD_like {
   display: flex;
@@ -1695,7 +1685,7 @@ body {
   display: flex;
   align-items: center;
 
-  color: var(--color17);
+  color: var(--color5);
   margin-right: 10px;
 }
 .PD_like_block {
@@ -1711,12 +1701,12 @@ body {
   display: flex;
   align-items: center;
 
-  color: var(--color17);
+  color: var(--color5);
 }
 .PD_a2_r_box3 {
   width: 242px;
   height: 60px;
-  background: var(--color18);
+  background: var(--color8);
   margin-top: 5px;
   display: flex;
   flex-direction: row;
@@ -1820,7 +1810,7 @@ body {
 .PD_download_btn {
   width: 311px;
   height: 60px;
-  background: var(--color9);
+  background: var(--color6);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1857,13 +1847,13 @@ body {
   display: flex;
   align-items: center;
 
-  color: var(--color9);
+  color: var(--color6);
   margin: 0;
 }
 .PD_a5_line {
   width: 220px;
   height: 4px;
-  background: var(--color9);
+  background: var(--color6);
 }
 .PD_From {
   display: flex;
@@ -1873,7 +1863,7 @@ body {
 .PD_a5-2_btn {
   width: 100px;
   height: 40px;
-  background: var(--color9);
+  background: var(--color6);
   color: var(--purewhite);
   font-weight: bold;
   font-size: 2em;
@@ -1881,7 +1871,7 @@ body {
 .PD_a5-2 {
   width: 100%;
   height: 40px;
-  background: var(--color19);
+  background: var(--color9);
   border: 1px solid rgba(0, 0, 0, 0.22);
   box-sizing: border-box;
   margin-top: 40px;
@@ -2292,7 +2282,7 @@ body {
     margin: 0;
   }
   .H_text p span {
-    color: var(--color6);
+    color: var(--color3);
     font-size: 1.8em;
     font-weight: bold;
   }
@@ -2377,9 +2367,9 @@ body {
     /* display: flex;
   align-items: flex-end; */
     /* text-align: center;
-  color: var(--color9);
+  color: var(--color6);
   margin: 0; */
-    border: 2px solid var(--color9);
+    border: 2px solid var(--color6);
     padding-left: 5px;
     padding-right: 5px;
   }
@@ -2387,7 +2377,7 @@ body {
     /* width: 202px;
   height: 6px;
 
-  background: var(--color9);
+  background: var(--color6);
   margin-top: 15px; */
     display: none;
   }
@@ -2400,7 +2390,7 @@ body {
   .logC_box {
     width: 80vw;
 
-    background: var(--color9);
+    background: var(--color6);
     border: 3px solid var(--pureblack);
     box-sizing: border-box;
     margin-top: 20px;
@@ -2449,7 +2439,7 @@ body {
   }
   .PrfC_title h3 {
     font-size: 2em;
-    border: 2px solid var(--color9);
+    border: 2px solid var(--color6);
     padding-left: 5px;
     padding-right: 5px;
     justify-content: center;
@@ -2533,7 +2523,7 @@ body {
     align-items: center;
     text-align: center;
 
-    color: var(--color9);
+    color: var(--color6);
     margin: 0;
     margin-left: 10px;
     margin-right: 10px;
@@ -2558,7 +2548,7 @@ body {
     align-items: center;
     text-align: center;
 
-    color: var(--color6);
+    color: var(--color3);
     margin: 0;
   }
 
@@ -2801,7 +2791,7 @@ body {
   .ProductItem_container {
     width: 284px;
     height: 230px;
-    background: var(--color9);
+    background: var(--color6);
     border-radius: 8px 8px 8px 8px;
     margin-top: 20px;
     margin-bottom: 20px;
@@ -2862,8 +2852,8 @@ body {
     font-weight: bold;
     font-size: 2.5em;
     line-height: 22px;
-    color: var(--color9);
-    border: 2px solid var(--color9);
+    color: var(--color6);
+    border: 2px solid var(--color6);
     padding-left: 5px;
     padding-right: 5px;
     padding-top: 5px;
@@ -2895,7 +2885,7 @@ body {
   .PD_a2_r_box2 {
     width: 100%;
     height: 150px;
-    background: var(--color9);
+    background: var(--color6);
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -2977,7 +2967,7 @@ body {
   .PD_a2_r_box3 {
     width: 100%;
     height: 40px;
-    background: var(--color18);
+    background: var(--color8);
     border-radius: 5px;
   }
   .PD_like_ico {
@@ -3100,7 +3090,7 @@ body {
   .PD_a5-2_btn {
     width: 100px;
     height: 40px;
-    background: var(--color9);
+    background: var(--color6);
     color: var(--purewhite);
     font-weight: bold;
     font-size: 2em;
@@ -3108,7 +3098,7 @@ body {
   .PD_a5-2 {
     width: 100%;
     height: 40px;
-    background: var(--color19);
+    background: var(--color9);
     border: 1px solid rgba(0, 0, 0, 0.22);
     box-sizing: border-box;
     margin-top: 40px;
