@@ -19,7 +19,8 @@ const firebaseConfig = {
 };
 
 firebase.initializeApp(firebaseConfig);
-
+firebase.firestore().enablePersistence()
+.catch((err)=>{console.log(err.code)})
 const productsCollectionRef = firebase.firestore().collection("products");
 const productsDocRef = productsCollectionRef.doc("json");
 const allProductsCollectionRef = productsDocRef.collection("allProducts");
@@ -28,9 +29,9 @@ const allOrdersCollectionRef = firebase.firestore().collection("allOrders");
 //REFERENCE AUTH
 const auth = firebase.auth();
 
-export const getProductById = async (productId) => {
+export const getProductById = async (productId,category) => {
   // REFERENCE PRODUCTS COLLECTION
-  const doc = await allProductsCollectionRef.doc(productId).get();
+  const doc = await productsDocRef.collection(category).doc(productId).get();
   return doc.data()
 }
 
