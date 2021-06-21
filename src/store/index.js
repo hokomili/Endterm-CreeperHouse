@@ -70,6 +70,13 @@ try {
   orderInfo_order = { id: "" };
 }
 
+let recolor;
+try {
+  recolor = localStorage.getItem('color');
+} catch(e) {
+  recolor = 'normal';
+}
+
 const initialState = {
   allProducts: [],
   page: {
@@ -125,7 +132,7 @@ const initialState = {
   },
   theme: {
     loading: false,
-    color: 'normal',
+    color: recolor,
     error: "",
   }
 };

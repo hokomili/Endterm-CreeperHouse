@@ -340,5 +340,6 @@ export const getUserOrders = async (dispatch) => {
 }
 export const setTheme =async(dispatch,e)=>{
   const color = await changeColor(e);
+  localStorage.setItem('color',color);
   dispatch({type:CHANGE_THEME,payload: color});
 }

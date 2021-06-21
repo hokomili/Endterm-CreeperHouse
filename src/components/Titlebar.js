@@ -38,11 +38,11 @@ export default function Titlebar() {
   return (
     <div className="Titlebar_flex">
       <input id="nav-toggle" type="checkbox"  onClick={Hambager}></input>
-      <label for="nav-toggle" class="ham">
-        <div class="ham-origin">
-          <div class="ham-bar ham-bar--top"></div>
-          <div class="ham-bar ham-bar--middle"></div>
-          <div class="ham-bar ham-bar--bottom"></div>
+      <label for="nav-toggle" className="ham">
+        <div className="ham-origin">
+          <div className="ham-bar ham-bar--top"></div>
+          <div className="ham-bar ham-bar--middle"></div>
+          <div className="ham-bar ham-bar--bottom"></div>
         </div>
       </label>
       <img className="Titlebar_logo" src={logo(color)} />
