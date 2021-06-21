@@ -1,6 +1,7 @@
 @import "~antd/dist/antd.css";
 /* general */
 html {
+  --theme:normal;
   --purewhite:rgb(255, 255, 255);
   --pureblack:rgb(0, 0, 0);
   --color1:#33c754;

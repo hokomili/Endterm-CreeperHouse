@@ -11,6 +11,7 @@ import NavItem from "./NavItem";
 import { useState,useEffect,useContext } from "react";
 import { StoreContext } from "../store";
 import { changeColor } from "../utils";
+import { setTheme } from "../actions";
 
 export default function Navbar() {
   // function name1() {
@@ -18,11 +19,14 @@ export default function Navbar() {
   //     document.getElementById("A").src={HV_homeico};
   // }
   const { state: { userSignin : { userInfo, remember } } } = useContext(StoreContext);
+  const {state: {theme :{color}},dispatch}=useContext(StoreContext);
   const history = useHistory();
   const goToProfile = () => {
     history.push("/loginpage?redirect=profilepage");
   };
-
+  const changes =(e)=>{
+    setTheme(dispatch,e);
+  }
   useEffect(() => {
     if(remember)
         localStorage.setItem("userInfo", JSON.stringify(userInfo));
@@ -106,7 +110,7 @@ export default function Navbar() {
       </div>
 
       <div className="Navbar_a3">
-        <form onChange={changeColor}>
+        <form onChange={changes}>
           <div className="Navbar_normal navbar_choic_flex">
             <div className="Navbar_nm_choice">
               <input

@@ -61,6 +61,7 @@ export const SUCCESS_USER_ORDERS = 'SUCCESS_USER_ORDERS';
 export const FAIL_USER_ORDERS = 'FAIL_USER_ORDERS';
 
 //colors
+export const CHANGE_THEME = 'CHANGE_THEME';
 export const Normal=[
     '#33c754',
     '#eeeeee',

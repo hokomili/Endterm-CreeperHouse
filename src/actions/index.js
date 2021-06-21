@@ -35,6 +35,7 @@ import {
   BEGIN_USER_ORDERS,
   SUCCESS_USER_ORDERS,
   FAIL_USER_ORDERS,
+  CHANGE_THEME,
 } from "../utils/constants";
 
 import {
@@ -55,6 +56,7 @@ import {
   feedYoutuber,
   signInWithGoogle,
 } from "../api";
+import { changeColor } from "../utils";
 
 export const addCartItem = (dispatch, product, qty) => {
   const item = {
@@ -335,4 +337,8 @@ export const getUserOrders = async (dispatch) => {
       payload: error 
     });
   }
+}
+export const setTheme =async(dispatch,e)=>{
+  const color = await changeColor(e);
+  dispatch({type:CHANGE_THEME,payload: color});
 }
