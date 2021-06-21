@@ -82,7 +82,7 @@ export default function ProductDetail() {
                     <h3>{product.downloads}</h3>
                   </div>
                   <div className="PD_like">
-                    <div className="PD_like_block">
+                    <div className="PD_like_block ">
                       <img className="PD_info_ico PD_icon" src={like} />
                       <h3>like:</h3>
                     </div>
@@ -90,8 +90,8 @@ export default function ProductDetail() {
                   </div>
                 </div>
               </div>
-              <div className="PD_a2_r_box3">
-                <img className="PD_like_ico" src={whiteLike} />
+              <div className=" PD_a2_r_box3 hvr-pulse">
+                <img className="PD_like_ico " src={whiteLike} />
                 <h3>LIKE</h3>
               </div>
             </div>
@@ -135,7 +135,7 @@ export default function ProductDetail() {
                   </select>:0}
               </div>
             </div>
-            <div className="PD_download_btn">
+            <div className="PD_download_btn hvr-shrink">
               <img className="PD_down_icoimg PD_down_Bicon" src={download} />
               <h3>Download now</h3>
             </div>

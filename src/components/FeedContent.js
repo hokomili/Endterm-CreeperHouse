@@ -49,9 +49,9 @@ export default function FeedContent() {
 
             <div className="PrfC_view_area">
                 <div className="PrfC_view_box feed_0_flex">
-                    <div className="feed_0">
+                    <div className="feed_0 ">
                         <img className="feed_ico" src={pfupload} alt=""/>
-                        <div className="feed_box">
+                        <div className="feed_box hvr-pulse">
                             <h3>UPLOAD</h3>
                         </div>
                     </div>

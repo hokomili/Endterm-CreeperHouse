@@ -10,7 +10,7 @@ import { setProductDetail } from "../actions";
 export default function ProductItem({ product }) {
     const { dispatch } = useContext(StoreContext);
     return (
-        <div className="ProductItem_container">
+        <div className="ProductItem_container hvr-grow-shadow">
             <Link to={`/products/${product.category2}/${product.id}`} 
                 onClick={()=>{
                     setProductDetail(dispatch, product.id,product.category2,0,0);

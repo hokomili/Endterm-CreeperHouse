@@ -10,7 +10,7 @@ import { setProductDetail } from "../actions";
 export default function YoutubertItem({product}) {
     const { dispatch } = useContext(StoreContext);
     return (
-        <div className="YTC_Content">
+        <div className="YTC_Content ">
             <Link className="YTC_Item" to={`/ytsinglepage/${product.id}`} 
                 onClick={()=>{
                     setProductDetail(dispatch, product.id,"Youtuber",0,0);
@@ -26,9 +26,9 @@ export default function YoutubertItem({product}) {
                         </div>
                     </div>
                 </div>
-                <div className="YTC_Ir">
+                <div className="YTC_Ir hvr-grow-shadow">
                     <Link to={`/ytsinglepage/${product.id}`} className="YTC_btn">
-                        <h3>more info</h3>
+                        <h3>more</h3>
                     </Link>
                 </div>
             </Link>

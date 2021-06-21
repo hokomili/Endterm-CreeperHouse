@@ -58,7 +58,7 @@ export default function YTContentS() {
                 <a
                   rel="noreferrer"
                   href={product.youtube_link}
-                  className="YTS_yt_btn"
+                  className="YTS_yt_btn hvr-pulse"
                   target="_blank"
                 >
                   <img className="YTS_yt_ico" src={YTicon} />
