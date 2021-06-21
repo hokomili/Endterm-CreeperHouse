@@ -2,8 +2,12 @@ import { Carousel } from "antd";
 import { Link } from "react-router-dom";
 
 import YoutuberList from "../components/YoutuberList"
+import { useContext } from "react";
+import { StoreContext } from "../store";
+
 
 export default function Youtube({title}) {
+  const { state: { page: { products }, requestProducts: { loading } } } = useContext(StoreContext);
   return (
     <div className="Youtube_Container">
       <div className="PrfC_a1">
@@ -14,20 +18,65 @@ export default function Youtube({title}) {
       </div>
       <div className="YTC_a2">
         <div className="YT_Carousel">
-          <Carousel autoplay>
-            <Link to="">
-              <h3 className="H_Carousel_img">1</h3>
-            </Link>
-            <Link to="">
-              <h3 className="H_Carousel_img">2</h3>
-            </Link>
-            <Link to="">
-              <h3 className="H_Carousel_img">3</h3>
-            </Link>
-            <Link to="">
-              <h3 className="H_Carousel_img">4</h3>
-            </Link>
-          </Carousel>
+          {loading
+              ?(
+                <Carousel autoplay>
+                <Link to="">
+                  <h3 className="H_Carousel_img">1</h3>
+                </Link>
+                <Link to="">
+                  <h3 className="PHC_Carousel_img">2</h3>
+                </Link>
+                <Link to="">
+                  <h3 className="PHC_Carousel_img">3</h3>
+                </Link>
+                <Link to="">
+                  <h3 className="PHC_Carousel_img">4</h3>
+                </Link>
+                </Carousel>
+                ) : (
+                  <Carousel autoplay>
+                  <iframe
+                  className="H_Carousel_img"
+                  width="100%"
+                  height="380px"
+                  src={products[2].main_video}
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                  ></iframe>
+                  <iframe
+                  className="H_Carousel_img"
+                  width="100%"
+                  height="380px"
+                  src={products[4].main_video}
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                  ></iframe><iframe
+                  className="H_Carousel_img"
+                  width="100%"
+                  height="380px"
+                  src={products[6].main_video}
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                  ></iframe><iframe
+                  className="H_Carousel_img"
+                  width="100%"
+                  height="380px"
+                  src={products[7].main_video}
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                  ></iframe>
+                  </Carousel>
+              )
+            }
         </div>
       </div>
       <div className="YTC_a3">
