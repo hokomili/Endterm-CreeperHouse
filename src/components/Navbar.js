@@ -65,12 +65,17 @@ export default function Navbar() {
         </div>
       </div>
       <div className="Navbar_a2">
-        <Link to="/homepage" className="Navbar_Home navbar_flex hvr-fade ">
+        <NavItem 
+          to="/homepage"
+          className="nav-item Navbar_Home navbar_flex hvr-fade"
+          activeClassName="nav-item--active"
+          title="Home"
+        >
           <img id="A" className="Navbar_Home_p navbar_ico" src={homeico} />
           <div className="Navbar_w ">
             <h3>Home</h3>
           </div>
-        </Link>
+        </NavItem>
         <NavItem
           to="/category/mods"
           className="nav-item Navbar_Mod navbar_flex hvr-fade"
