@@ -82,16 +82,16 @@ export default function Youtube({title}) {
       </div>
       <div className="YTC_a3">
         <div className="PrfC_choose_area">
-          <div onClick={()=>requestPage(dispatch,'All')} className="PrfC_cho_box PrfC_cho_hv">
+          <div onClick={()=>requestPage(dispatch,'All')} className={page==='All'?'PrfC_cho_box PrfC_cho_hv prfc_selected':"PrfC_cho_box PrfC_cho_hv"}>
             <h3>All</h3>
           </div>
-          <div onClick={()=>requestPage(dispatch,'Mods')} className="PrfC_cho_box PrfC_cho_hv">
+          <div onClick={()=>requestPage(dispatch,'Mods')} className={page==='Mods'?'PrfC_cho_box PrfC_cho_hv prfc_selected':"PrfC_cho_box PrfC_cho_hv"}>
             <h3>Mods</h3>
           </div>
-          <div onClick={()=>requestPage(dispatch,'Survival')} className="PrfC_cho_box PrfC_cho_hv">
+          <div onClick={()=>requestPage(dispatch,'Survival')} className={page==='Survival'?'PrfC_cho_box PrfC_cho_hv prfc_selected':"PrfC_cho_box PrfC_cho_hv"}>
             <h3>Survival</h3>
           </div>
-          <div onClick={()=>requestPage(dispatch,'Other')} className="PrfC_cho_box PrfC_cho_hv">
+          <div onClick={()=>requestPage(dispatch,'Other')} className={page==='Other'?'PrfC_cho_box PrfC_cho_hv prfc_selected':"PrfC_cho_box PrfC_cho_hv"}>
             <h3>Other</h3>
           </div>
         </div>

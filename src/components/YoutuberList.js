@@ -20,7 +20,7 @@ export default function YTList() {
                     {products.map(product =>(
                         product.category===page
                         ? <YTItem product={product} key={product.id}/>
-                        : page==='All'
+                        : page==='All'||(page!=='Mods'&&page!=='Survival'&&page!=='others')
                             ? <YTItem product={product} key={product.id}/>
                             : <></>
                     ))}
