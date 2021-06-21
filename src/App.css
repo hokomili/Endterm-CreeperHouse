@@ -155,7 +155,7 @@ body {
   width: 60px;
   height: 60px;
   border-radius: 99px;
-  border: white 3px solid;
+  border: var(--purewhite) 3px solid;
 }
 .Navbar_member_text {
 }
@@ -3169,4 +3169,7 @@ width: 320px;
 }
 .nav-item--active{
   background-color: var(--color1);
+}
+.prfc_selected{
+  background-color:var(--color4)
 }

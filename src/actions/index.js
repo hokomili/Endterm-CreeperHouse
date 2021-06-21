@@ -355,10 +355,10 @@ export const setTheme =async(dispatch,e)=>{
   dispatch({type:CHANGE_THEME,payload: color});
 }
 
-export const getUserFav = async (dispatch) => {
+export const getUserFav = async (dispatch,userInfo) => {
   dispatch({ type: BEGIN_USER_FAV });
   try {
-    const favo = await getFavByUser();
+    const favo = await getFavByUser(userInfo);
     dispatch({ 
       type: SUCCESS_USER_FAV,
       payload: favo
@@ -373,10 +373,11 @@ export const getUserFav = async (dispatch) => {
 export const addUserFav = async (dispatch,userInfo,product) => {
   dispatch({ type: BEGIN_USER_FAV });
   try {
-    const favo = await addFav(userInfo,product);
+    await addFav(userInfo,product);
+    await getUserFav(dispatch,userInfo)
     dispatch({ 
-      type: SUCCESS_USER_FAV,
-      payload: favo
+      type: ADD_USER_FAV,
+      payload: product
     });
   }catch (error) {
     dispatch({ 
@@ -388,10 +389,11 @@ export const addUserFav = async (dispatch,userInfo,product) => {
 export const removeUserFav = async (dispatch,userInfo,product) => {
   dispatch({ type: BEGIN_USER_FAV });
   try {
-    const favo = await removeFav(userInfo,product);
+    await removeFav(userInfo,product);
+    await getUserFav(dispatch,userInfo)
     dispatch({ 
-      type: SUCCESS_USER_FAV,
-      payload: favo
+      type: REMOVE_USER_FAV,
+      payload: product
     });
   }catch (error) {
     dispatch({ 

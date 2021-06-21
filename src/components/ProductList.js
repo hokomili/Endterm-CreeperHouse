@@ -20,7 +20,7 @@ export default function ProductList() {
                 {products.map(product =>(
                     product.category===page
                     ? <ProductItem product={product} key={product.id}/>
-                    : page==='All'
+                    : page==='All'||(page!=='Popular'&&page!=='Latest'&&page!=='Views'&&page!=='Download')
                         ? <ProductItem product={product} key={product.id}/>
                         : <></>
                 ))}

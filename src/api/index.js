@@ -31,21 +31,25 @@ const allUsersCollectionRef = firebase.firestore().collection("allUsers");
 const auth = firebase.auth();
 const googleProvider= new firebase.auth.GoogleAuthProvider();
 export const addFav = async (userInfo,product) =>{
-  const doc = await allUsersCollectionRef.doc(userInfo.uid).set(product);
-  return doc.data()
+  const doc = await allUsersCollectionRef.doc("Json").collection(userInfo.uid).doc(product.id).set(product);
+  return doc
 }
 export const removeFav = async (userInfo,product) =>{
-  const doc = await allUsersCollectionRef.doc(userInfo.uid).delete(product);
-  return doc.data()
+  const doc = await allUsersCollectionRef.doc("Json").collection(userInfo.uid).doc(product.id).delete(product);
+  return doc
 }
 export const getProductById = async (productId,category) => {
   // REFERENCE PRODUCTS COLLECTION
   const doc = await productsDocRef.collection(category).doc(productId).get();
   return doc.data()
 }
-export const getFavByUser =async (user) => {
-  const doc = await allUsersCollectionRef.doc(user).get();
-  return doc.data()
+export const getFavByUser =async (userInfo) => {
+  const doc = await allUsersCollectionRef.doc("Json").collection(userInfo.uid).get();
+  let jsonProducts = [];
+  doc.forEach((doc) => {
+    jsonProducts.push(doc.data());
+  });
+  return jsonProducts;
 }
 export const getProducts = async (url) => {
   console.log(url);

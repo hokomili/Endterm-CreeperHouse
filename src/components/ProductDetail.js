@@ -7,14 +7,15 @@ import view from "../images/icon/pd_view_ico.png";
 import vision from "../images/icon/pd_vision_ico.png";
 import download from "../images/icon/pd_download_ico.png";
 import whiteLike from "../images/icon/Like_S_icon.png";
+import redLike from "../images/icon/Like_D_icon.png";
 import { useContext } from "react";
 import { Spin } from "antd";
 import { LoadingOutlined } from '@ant-design/icons';
 import { StoreContext } from "../store"
-import { setProductDetail } from "../actions";
+import { setProductDetail , addUserFav , removeUserFav } from "../actions";
 
 export default function ProductDetail() {
-  const { state: { productDetail: { product, ver, edi }, requestProducts: { loading } }, dispatch } = useContext(StoreContext);
+  const { state: { productDetail: { product, ver, edi }, requestProducts: { loading } ,fav:{ products , userInfo } }, dispatch } = useContext(StoreContext);
   const antIcon = <LoadingOutlined style={{ fontSize: 80, color: "#81ff83" }} spin />;
   return (
     <div className="ProductDetail_container">
@@ -90,10 +91,16 @@ export default function ProductDetail() {
                   </div>
                 </div>
               </div>
-              <div className=" PD_a2_r_box3 hvr-pulse">
-                <img className="PD_like_ico " src={whiteLike} />
-                <h3>LIKE</h3>
-              </div>
+              {products.every(fav=>fav.id!==product.id)
+                ? <div onClick={()=>{addUserFav(dispatch,userInfo,product)}} className=" PD_a2_r_box3 hvr-pulse">
+                    <img className="PD_like_ico " src={whiteLike} />
+                    <h3>LIKE</h3>
+                  </div>
+                : <div onClick={()=>{removeUserFav(dispatch,userInfo,product)}} className=" PD_a2_r_box3 hvr-pulse">
+                    <img className="PD_like_ico " src={redLike} />
+                    <h3>LIKE</h3>
+                  </div>
+              }
             </div>
           </div>
           <div className="PD_a3">

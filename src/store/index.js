@@ -94,7 +94,6 @@ try {
 
 let fav;
 
-
 const initialState = {
   allProducts: [],
   page: {
@@ -473,27 +472,27 @@ function reducer(state, action) {
         };
       case ADD_USER_FAV:
         const favi = action.payload;
-        const favp = state.fav.product.find((x) => x.id === favi.id);
+        const favp = state.fav.products.find((x) => x.id === favi.id);
         if (favp) {
-          fav = state.fav.product.map((x) =>
+          fav = state.fav.products.map((x) =>
             x.id === favp.id ? favi : x
           );
-          return { ...state, product: { ...state.fav, fav } };
+          return { ...state, fav: { ...state.fav, fav } };
         }
-        fav = [...state.cart.product, favi];
-        return { ...state, product: { ...state.fav, fav } };
+        fav = [...state.fav.products, favi];
+        return { ...state, fav: { ...state.fav, fav } };
       case REMOVE_USER_FAV:
-        fav = state.fav.product.filter((x) => x.id !== action.payload);
-        return { ...state, cart: { ...state.fav, fav } };
+        fav = state.fav.products.filter((x) => x.id !== action.payload);
+        return { ...state, fav: { ...state.fav, fav } };
       case BEGIN_USER_FAV:
         return {
           ...state,
-          userOrders: { ...state.userOrders, loading: true },
+          fav: { ...state.fav, loading: true },
         };
       case SUCCESS_USER_FAV:
         return {
           ...state,
-          userOrders: { 
+          fav: { 
             ...state.fav,
             loading: false,
             products: action.payload,
@@ -503,7 +502,7 @@ function reducer(state, action) {
       case FAIL_USER_FAV:
         return {
           ...state,
-          userOrders: { 
+          fav: { 
             ...state.fav,
             loading: false,
             error: action.payload,
