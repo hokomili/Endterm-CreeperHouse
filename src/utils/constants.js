@@ -98,3 +98,15 @@ export const Blue=[
     'rgba(207, 199, 199, 0.32)',
     'rgb(170, 195, 248)',
     'rgb(6, 34, 109)'];
+
+//page swap
+export const BEGIN_PAGE_SWAP='BEGIN_PAGE_SWAP';
+export const SUCCESS_PAGE_SWAP='SUCCESS_PAGE_SWAP';
+export const FAIL_PAGE_SWAP='FAIL_PAGE_SWAP';
+
+//favorite
+export const ADD_USER_FAV='ADD_USER_FAV';
+export const REMOVE_USER_FAV='REMOVE_USER_FAV';
+export const BEGIN_USER_FAV='BEGIN_USER_FAV';
+export const SUCCESS_USER_FAV='SUCCESS_USER_FAV';
+export const FAIL_USER_FAV='FAIL_USER_FAV';

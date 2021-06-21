@@ -38,7 +38,7 @@ export default function Titlebar() {
   return (
     <div className="Titlebar_flex">
       <input id="nav-toggle" type="checkbox"  onClick={Hambager}></input>
-      <label for="nav-toggle" className="ham">
+      <label htmlFor="nav-toggle" className="ham">
         <div className="ham-origin">
           <div className="ham-bar ham-bar--top"></div>
           <div className="ham-bar ham-bar--middle"></div>

@@ -18,23 +18,8 @@ export default function ProductHeader({title}) {
       <div className="PHC_a2">
         <div className="PHC_Carousel">
           
-        {loading
+        {!loading&&products[8]
               ?(
-                <Carousel autoplay>
-                <Link to="">
-                  <h3 className="H_Carousel_img">1</h3>
-                </Link>
-                <Link to="">
-                  <h3 className="PHC_Carousel_img">2</h3>
-                </Link>
-                <Link to="">
-                  <h3 className="PHC_Carousel_img">3</h3>
-                </Link>
-                <Link to="">
-                  <h3 className="PHC_Carousel_img">4</h3>
-                </Link>
-                </Carousel>
-                ) : (
                   <Carousel autoplay>
                   <Link to={'/products/'+products[2].category2+'/'+products[2].id}>
                   <img className="H_Carousel_img" src={products[2].image} key={products[2].id} alt="" />
@@ -47,6 +32,21 @@ export default function ProductHeader({title}) {
                   </Link>
                   <Link to={'/products/'+products[8].category2+'/'+products[8].id}>
                   <img className="H_Carousel_img" src={products[8].image} key={products[8].id} alt="" />
+                  </Link>
+                  </Carousel>
+                ) : (
+                  <Carousel autoplay>
+                  <Link to="">
+                    <h3 className="H_Carousel_img">1</h3>
+                  </Link>
+                  <Link to="">
+                    <h3 className="PHC_Carousel_img">2</h3>
+                  </Link>
+                  <Link to="">
+                    <h3 className="PHC_Carousel_img">3</h3>
+                  </Link>
+                  <Link to="">
+                    <h3 className="PHC_Carousel_img">4</h3>
                   </Link>
                   </Carousel>
               )

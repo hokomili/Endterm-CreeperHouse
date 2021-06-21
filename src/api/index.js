@@ -25,16 +25,28 @@ const productsCollectionRef = firebase.firestore().collection("products");
 const productsDocRef = productsCollectionRef.doc("json");
 const allProductsCollectionRef = productsDocRef.collection("allProducts");
 const allOrdersCollectionRef = firebase.firestore().collection("allOrders");
+const allUsersCollectionRef = firebase.firestore().collection("allUsers");
 
 //REFERENCE AUTH
 const auth = firebase.auth();
 const googleProvider= new firebase.auth.GoogleAuthProvider();
+export const addFav = async (userInfo,product) =>{
+  const doc = await allUsersCollectionRef.doc(userInfo.uid).set(product);
+  return doc.data()
+}
+export const removeFav = async (userInfo,product) =>{
+  const doc = await allUsersCollectionRef.doc(userInfo.uid).delete(product);
+  return doc.data()
+}
 export const getProductById = async (productId,category) => {
   // REFERENCE PRODUCTS COLLECTION
   const doc = await productsDocRef.collection(category).doc(productId).get();
   return doc.data()
 }
-
+export const getFavByUser =async (user) => {
+  const doc = await allUsersCollectionRef.doc(user).get();
+  return doc.data()
+}
 export const getProducts = async (url) => {
   console.log(url);
   const collection = jsonInfo.find(element => element.url === url);

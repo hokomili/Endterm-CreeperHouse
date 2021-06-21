@@ -7,7 +7,7 @@ export const getTitle = url => {
    return json.title;
  }
 
- export const changeColor =(type)=>{
+export const changeColor =(type)=>{
   var i=1
   switch(type?type:"0"){
     case "normal":
@@ -43,4 +43,7 @@ export const getTitle = url => {
       document.documentElement.style.setProperty('--pureblack',Normal[10]);
       return 'normal';
   }
- }
+}
+export const pageSwap =(type)=>{
+  return type;
+}
