@@ -5,6 +5,7 @@ import { useContext } from "react";
 import { StoreContext } from "../store";
 
 export default function ProductList() {
+    const { state: { swap: { page }},dispatch } = useContext(StoreContext);
     const { state: { page: { products }, requestProducts: { loading } } } = useContext(StoreContext);
     const antIcon = <LoadingOutlined style={{ fontSize: 80, color: "#81ff83" }} spin />;
     return (
@@ -17,7 +18,11 @@ export default function ProductList() {
             ) : (
             <div className="ProductList_container">
                 {products.map(product =>(
-                    <ProductItem product={product} key={product.id}/>
+                    product.category===page
+                    ? <ProductItem product={product} key={product.id}/>
+                    : page==='All'
+                        ? <ProductItem product={product} key={product.id}/>
+                        : <></>
                 ))}
             </div>
             )

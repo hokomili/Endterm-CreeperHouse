@@ -1802,7 +1802,7 @@ width: 320px;
 .PD_download_ico {
   width: 60px;
   height: 60px;
-  background: #259644;
+  background: var(--color4);
   margin-right: 8px;
   display: flex;
   justify-content: center;
@@ -3165,4 +3165,7 @@ width: 320px;
     line-height: 23px;
     display: flex;
   }
+}
+.nav-item--active{
+  background-color: var(--color1);
 }

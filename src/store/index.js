@@ -38,6 +38,14 @@ import {
   SUCCESS_USER_ORDERS,
   FAIL_USER_ORDERS,
   CHANGE_THEME,
+  BEGIN_PAGE_SWAP,
+  SUCCESS_PAGE_SWAP,
+  FAIL_PAGE_SWAP,
+  ADD_USER_FAV,
+  REMOVE_USER_FAV,
+  BEGIN_USER_FAV,
+  SUCCESS_USER_FAV,
+  FAIL_USER_FAV,
 } from "../utils/constants";
 
 export const StoreContext = createContext();
@@ -69,6 +77,23 @@ try {
 } catch(e) {
   orderInfo_order = { id: "" };
 }
+
+let recolor;
+try {
+  recolor = localStorage.getItem('color');
+} catch(e) {
+  recolor = 'normal';
+}
+
+let swapage;
+try {
+  swapage = localStorage.getItem('page');
+} catch(e) {
+  swapage = 'All';
+}
+
+let fav;
+
 
 const initialState = {
   allProducts: [],
@@ -125,7 +150,18 @@ const initialState = {
   },
   theme: {
     loading: false,
-    color: 'normal',
+    color: recolor,
+    error: "",
+  },
+  fav:{
+    loading: false,
+    products: [],
+    userInfo,
+    error: "",
+  },
+  swap:{
+    loading: false,
+    page: swapage,
     error: "",
   }
 };
@@ -411,6 +447,68 @@ function reducer(state, action) {
           error:'',
         },
       };
+      case BEGIN_PAGE_SWAP:
+        return {
+          ...state,
+          swap: { ...state.swap, loading: true },
+        };
+      case SUCCESS_PAGE_SWAP:
+        return {
+          ...state,
+          swap: { 
+            ...state.swap,
+            loading: false,
+            page: action.payload,
+            error: "",
+          },
+        };
+      case FAIL_PAGE_SWAP:
+        return {
+          ...state,
+          swap: { 
+            ...state.swap,
+            loading: false,
+            error: action.payload,
+          },
+        };
+      case ADD_USER_FAV:
+        const favi = action.payload;
+        const favp = state.fav.product.find((x) => x.id === favi.id);
+        if (favp) {
+          fav = state.fav.product.map((x) =>
+            x.id === favp.id ? favi : x
+          );
+          return { ...state, product: { ...state.fav, fav } };
+        }
+        fav = [...state.cart.product, favi];
+        return { ...state, product: { ...state.fav, fav } };
+      case REMOVE_USER_FAV:
+        fav = state.fav.product.filter((x) => x.id !== action.payload);
+        return { ...state, cart: { ...state.fav, fav } };
+      case BEGIN_USER_FAV:
+        return {
+          ...state,
+          userOrders: { ...state.userOrders, loading: true },
+        };
+      case SUCCESS_USER_FAV:
+        return {
+          ...state,
+          userOrders: { 
+            ...state.fav,
+            loading: false,
+            products: action.payload,
+            error: "",
+          },
+        };
+      case FAIL_USER_FAV:
+        return {
+          ...state,
+          userOrders: { 
+            ...state.fav,
+            loading: false,
+            error: action.payload,
+          },
+        };
     default:
       return state;
   }

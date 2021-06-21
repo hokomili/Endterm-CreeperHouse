@@ -36,9 +36,20 @@ import {
   SUCCESS_USER_ORDERS,
   FAIL_USER_ORDERS,
   CHANGE_THEME,
+  BEGIN_PAGE_SWAP,
+  SUCCESS_PAGE_SWAP,
+  FAIL_PAGE_SWAP,
+  ADD_USER_FAV,
+  REMOVE_USER_FAV,
+  BEGIN_USER_FAV,
+  SUCCESS_USER_FAV,
+  FAIL_USER_FAV,
 } from "../utils/constants";
 
 import {
+  getFavByUser,
+  addFav,
+  removeFav,
   getProducts,
   getProductById,
   feedProducts,
@@ -56,7 +67,7 @@ import {
   feedYoutuber,
   signInWithGoogle,
 } from "../api";
-import { changeColor } from "../utils";
+import { changeColor,pageSwap } from "../utils";
 
 export const addCartItem = (dispatch, product, qty) => {
   const item = {
@@ -340,5 +351,68 @@ export const getUserOrders = async (dispatch) => {
 }
 export const setTheme =async(dispatch,e)=>{
   const color = await changeColor(e);
+  localStorage.setItem('color',color);
   dispatch({type:CHANGE_THEME,payload: color});
+}
+
+export const getUserFav = async (dispatch) => {
+  dispatch({ type: BEGIN_USER_FAV });
+  try {
+    const favo = await getFavByUser();
+    dispatch({ 
+      type: SUCCESS_USER_FAV,
+      payload: favo
+    });
+  }catch (error) {
+    dispatch({ 
+      type: FAIL_USER_FAV, 
+      payload: error 
+    });
+  }
+}
+export const addUserFav = async (dispatch,userInfo,product) => {
+  dispatch({ type: BEGIN_USER_FAV });
+  try {
+    const favo = await addFav(userInfo,product);
+    dispatch({ 
+      type: SUCCESS_USER_FAV,
+      payload: favo
+    });
+  }catch (error) {
+    dispatch({ 
+      type: FAIL_USER_FAV, 
+      payload: error 
+    });
+  }
+}
+export const removeUserFav = async (dispatch,userInfo,product) => {
+  dispatch({ type: BEGIN_USER_FAV });
+  try {
+    const favo = await removeFav(userInfo,product);
+    dispatch({ 
+      type: SUCCESS_USER_FAV,
+      payload: favo
+    });
+  }catch (error) {
+    dispatch({ 
+      type: FAIL_USER_FAV, 
+      payload: error 
+    });
+  }
+}
+export const requestPage = async (dispatch,type) => {
+  dispatch({ type: BEGIN_PAGE_SWAP });
+  try {
+    const swap = await pageSwap(type);
+    localStorage.setItem('page',swap);
+    dispatch({ 
+      type: SUCCESS_PAGE_SWAP,
+      payload: swap
+    });
+  }catch (error) {
+    dispatch({ 
+      type: FAIL_PAGE_SWAP, 
+      payload: error 
+    });
+  }
 }

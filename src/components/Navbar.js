@@ -25,9 +25,22 @@ export default function Navbar() {
     history.push("/loginpage?redirect=profilepage");
   };
   const changes =(e)=>{
-    setTheme(dispatch,e);
+    switch(e.target.value){
+      case'1':
+      setTheme(dispatch,'normal');
+      break;
+      case'2':
+      setTheme(dispatch,'pink');
+      break;
+      case'3':
+      setTheme(dispatch,'blue');
+      break;
+      default:
+        setTheme(dispatch,'normal');
+    }
   }
   useEffect(() => {
+    setTheme(dispatch,color);
     if(remember)
         localStorage.setItem("userInfo", JSON.stringify(userInfo));
     else
@@ -52,12 +65,17 @@ export default function Navbar() {
         </div>
       </div>
       <div className="Navbar_a2">
-        <Link to="/homepage" className="Navbar_Home navbar_flex hvr-fade ">
+        <NavItem 
+          to="/homepage"
+          className="nav-item Navbar_Home navbar_flex hvr-fade"
+          activeClassName="nav-item--active"
+          title="Home"
+        >
           <img id="A" className="Navbar_Home_p navbar_ico" src={homeico} />
           <div className="Navbar_w ">
             <h3>Home</h3>
           </div>
-        </Link>
+        </NavItem>
         <NavItem
           to="/category/mods"
           className="nav-item Navbar_Mod navbar_flex hvr-fade"
@@ -118,7 +136,7 @@ export default function Navbar() {
                 name="choice"
                 value="1"
                 className="navbar_choic"
-                defaultChecked
+                defaultChecked={color==='normal'?'checked':''}
               />{" "}
             </div>
             <div className="Navbar_nm_text navbar_choic_p">
@@ -132,6 +150,7 @@ export default function Navbar() {
                 name="choice"
                 value="2"
                 className="navbar_choic"
+                defaultChecked={color==='pink'?'checked':''}
               />{" "}
             </div>
             <div className="Navbar_pk_text navbar_choic_p">
@@ -145,6 +164,7 @@ export default function Navbar() {
                 name="choice"
                 value="3"
                 className="navbar_choic"
+                defaultChecked={color==='blue'?'checked':''}
               />{" "}
             </div>
             <div className="Navbar_ice_text navbar_choic_p">

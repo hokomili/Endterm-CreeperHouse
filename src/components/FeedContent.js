@@ -1,13 +1,38 @@
-import {Link} from "react-router-dom";
+import {Link,useHistory} from "react-router-dom";
 import peopel from "../images/people1.png";
 import like from "../images/icon/like_ico.png";
 import logout from "../images/icon/logout_ico.png";
 import pfview from "../images/icon/pfview_ico.png";
-import pfupload from "../images/icon/upload_ico.png";
+import normal from "../images/icon/upload_ico.png";
+import pink from "../images/icon/pink_up.png";
+import blue from "../images/icon/blue_up.png";
+import React, { useContext, useEffect } from "react";
+import { logoutFromFirebase, updateUserInfo, getUserOrders } from "../actions";
+import { StoreContext } from "../store";
+import ProfileContentList from "../components/ProfileContentList";
 
 
 export default function FeedContent() {
-  return (
+    const { state: { userSignin: { userInfo }, userOrders, }, dispatch, } = useContext(StoreContext);
+    const { displayName, email } = userInfo;
+    const history = useHistory();
+    const { state: { theme: { color }} } = useContext(StoreContext);
+    function upload(color){
+        console.log(color);
+        switch(color){
+        case 'pink':
+            return pink;
+        case 'blue':
+            return blue;
+        default:
+            return normal;
+        }
+    }
+    const handleLogout = () => {
+        logoutFromFirebase(dispatch);
+        history.push("/homepage");
+    };
+    return (
 
       <div className="ProfileContent_container">
         <div className="PrfC_a1">
@@ -22,14 +47,17 @@ export default function FeedContent() {
             </div>
             <div className="PrfC_Bbox">
                 <div className="PrfC_Bbox_l">
-                    <img className="PrfC_photo" src={peopel} alt=""/>
+                    {userInfo.photoURL
+                    ? <img className="PrfC_photo" src={userInfo.photoURL} />
+                    : <img className="PrfC_photo" src={peopel} />
+                    }
                     <div className="PrfC_l_text">
-                        <h2>Dream</h2>
-                        <h4>aabbccdd@mail.com</h4>
-                        <div className="PrfC_l_like_area">
-                            <img className="PrfC_l_like_ico" src={like} alt=""/>
-                            <div className="PrfC_l_like_num">113</div>
-                        </div>
+                    <h2>{userInfo.displayName}</h2>
+                    <h4>{userInfo.email}</h4>
+                    <div className="PrfC_l_like_area">
+                        <img className="PrfC_l_like_ico" src={like} />
+                        <div className="PrfC_l_like_num">113</div>
+                    </div>
                     </div>
                 </div>
                 <div className="PrfC_Bbox_r">
@@ -39,9 +67,9 @@ export default function FeedContent() {
                     <Link to="/ProfilePage"className="PrfC_r_manag_box">
                         <img className="PrfC_r_manag_ico" src={pfview} alt=""/>
                     </Link>
-                    <Link to="" className="PrfC_r_logout_box">
+                    <div onClick={handleLogout} className="PrfC_r_logout_box">
                         <img className="PrfC_r_logout_ico" src={logout} alt=""/>
-                    </Link>
+                    </div>
                 </div>
             </div>
         </div>
@@ -49,8 +77,8 @@ export default function FeedContent() {
 
             <div className="PrfC_view_area">
                 <div className="PrfC_view_box feed_0_flex">
-                    <div className="feed_0 ">
-                        <img className="feed_ico" src={pfupload} alt=""/>
+                    <div className="feed_0">
+                        <img className="feed_ico" src={upload(color)} alt=""/>
                         <div className="feed_box hvr-pulse">
                             <h3>UPLOAD</h3>
                         </div>
