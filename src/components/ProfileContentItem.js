@@ -3,7 +3,7 @@ import deleteicon from "../images/icon/delete_ico.png";
 
 export default function ProfileContent() {
     return (
-        <div className="Profile_item">
+        <div className="Profile_item hvr-grow-shadow">
             <img className="Profile_item_img" src={img1}/>
             <div className="Profile_item_text">
                 <h3>Macaw’s Trapdoors</h3>

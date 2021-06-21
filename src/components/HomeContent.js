@@ -4,6 +4,10 @@ import Textureimg from "../images/Home/texture.png";
 import Mapimg from "../images/Home/map.png";
 import YTimg from "../images/Home/youtuber.png";
 import MC from "../images/logo/MClogo.png";
+import IMG01 from "../images/co1.png";
+import IMG02 from "../images/co2.png";
+import IMG03 from "../images/co3.png";
+import IMG04 from "../images/co4.png";
 
 export default function HomeContent() {
   function btn() {
@@ -15,16 +19,16 @@ export default function HomeContent() {
         <div className="H_Carousel">
           <Carousel autoplay>
             <div>
-              <h3 className="H_Carousel_img">1</h3>
+              <img className="H_Carousel_img" src={IMG01}/>
             </div>
             <div>
-              <h3 className="H_Carousel_img">2</h3>
+              <img className="H_Carousel_img" src={IMG02}/>
             </div>
             <div>
-              <h3 className="H_Carousel_img">3</h3>
+              <img className="H_Carousel_img" src={IMG03}/>
             </div>
             <div>
-              <h3 className="H_Carousel_img">4</h3>
+              <img className="H_Carousel_img" src={IMG04}/>
             </div>
           </Carousel>
         </div>
@@ -82,9 +86,9 @@ export default function HomeContent() {
         <div className="H_B_img">
           <div className="H_B_box">
             <img className="H_B_LOGO" src={MC}/>
-            <div id="HBbtn"className="H_B_btn" onClick={btn}>
+            <a href="https://www.minecraft.net/zh-hant" id="HBbtn"className="H_B_btn" onClick={btn} target="_blank">
               <h3>GET MINECRAFT 1.17</h3>
-            </div>
+            </a>
           </div>
         </div>
       </div>

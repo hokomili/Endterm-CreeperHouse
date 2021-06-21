@@ -154,6 +154,8 @@ body {
 .Navbar_member_img {
   width: 60px;
   height: 60px;
+  border-radius: 99px;
+  border: white 3px solid;
 }
 .Navbar_member_text {
 }
@@ -163,6 +165,7 @@ body {
   font-weight: bold;
   margin-left: 20px;
   text-align: center;
+  cursor: pointer;
 }
 
 /* a2 */
@@ -905,6 +908,7 @@ body {
   justify-content: center;
   align-items: center;
   border: 5px outset var(--color4);
+  cursor: pointer;
 }
 .PrfC_r_logout_ico {
   width: 32px;
@@ -928,6 +932,7 @@ body {
   align-items: center;
   margin-left: 5px;
   margin-right: 5px;
+  cursor: pointer;
 }
 .PrfC_cho_box h3 {
   font-weight: bold;
@@ -991,6 +996,7 @@ body {
   width: 24px;
   height: 24px;
   margin-top: 10px;
+  cursor: pointer;
 }
 .Profile_item_text h3{
   font-weight: bold;
@@ -1135,8 +1141,8 @@ body {
   margin-right: 20px;
 }
 .YTC_btn {
-  width: 150px;
-  height: 49px;
+  width: 70px;
+  height: 40px;
   left: 621px;
   top: 707px;
 
@@ -1144,18 +1150,16 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  -webkit-box-shadow: -1px 11px 27px -9px rgba(0, 0, 0, 0.62);
-  -moz-box-shadow: -1px 11px 27px -9px rgba(0, 0, 0, 0.62);
-  box-shadow: -1px 11px 27px -9px rgba(0, 0, 0, 0.62);
+
 }
 
-.YTC_btn:hover {
+/* .YTC_btn:hover {
   box-shadow: none;
-}
+} */
 .YTC_btn h3 {
   font-weight: bold;
-  font-size: 24px;
-  line-height: 28px;
+  font-size: 2em;
+
   display: flex;
   align-items: center;
   text-align: center;
@@ -1188,6 +1192,7 @@ body {
   justify-content: center;
   align-items: flex-end;
 }
+
 .YTS_intro {
   width: 255px;
   height: 226px;
@@ -1196,23 +1201,26 @@ body {
 .YTS_intro_people {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   margin-top: 25px;
   margin-bottom: 25px;
 }
 .YTS_intro_people_img {
-  width: 93px;
-  height: 93px;
+  width: 60px;
+  height: 60px;
   border-radius: 99px;
+  margin-right: 10px;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 .YTS_intro_people h2 {
   font-weight: bold;
-  font-size: 3.6em;
+  font-size: 2.2em;
   line-height: 42px;
   display: flex;
   align-items: center;
+  
+  
 
   color: var(--purewhite);
   margin: 0;
@@ -1292,7 +1300,7 @@ body {
   width: 35%;
 }
 .YTS_Survival_box {
-  width: 351px;
+  width: 320px;
   height: 47px;
   background: var(--color6);
   display: flex;
@@ -1336,7 +1344,7 @@ body {
   width: 35%;
 }
 .YTS_Mod_box {
-  width: 351px;
+width: 320px;
   height: 47px;
   background: var(--color6);
   display: flex;
@@ -1563,7 +1571,7 @@ body {
   margin: 0;
 }
 .PD_a2_r_box2 {
-  width: 242px;
+  width: 270px;
   height: 292px;
   background: var(--color6);
   display: flex;
@@ -1706,7 +1714,7 @@ body {
   color: var(--color5);
 }
 .PD_a2_r_box3 {
-  width: 242px;
+  width: 270px;
   height: 60px;
   background: var(--color8);
   margin-top: 5px;
@@ -1714,6 +1722,13 @@ body {
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
+}
+.hvr-pulse{
+  display: flex!important;
+}
+.hvr-shrink{
+  display: flex!important;
 }
 .PD_like_ico {
   width: 30px;
@@ -1816,6 +1831,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 }
 .PD_down_Bicon {
   width: 30px;
@@ -2492,7 +2508,7 @@ body {
   }
   .PrfC_l_text h4 {
     font-weight: bold;
-    font-size: 1.8em;
+    font-size: 1.4em;
     line-height: 22px;
     color: var(--purewhite);
   }
@@ -2593,7 +2609,7 @@ body {
   }
   .YTC_people_text h3 {
     font-weight: bold;
-    font-size: 2em;
+    font-size: 1.6em;
     line-height: 20px;
   }
 
@@ -2894,6 +2910,8 @@ body {
     align-items: center;
     margin-top: 20px;
     border-radius: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
   }
   .PD_a2_r_box2_people {
     display: flex;
@@ -2909,7 +2927,7 @@ body {
   }
   .PD_a2_r_box2_people h3 {
     font-weight: bold;
-    font-size: 2em;
+    font-size: 1.6em;
     line-height: 28px;
     display: flex;
     align-items: center;

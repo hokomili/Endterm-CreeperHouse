@@ -17,7 +17,7 @@ function Enter() {
             <Link  to='/homepage' className="enter_start_btn hvr-shutter-out-horizontal hvr-wobble-horizontal">
               <h3>START</h3>
             </Link>
-            <Link to="" className="enter_login_btn hvr-pulse-shrink"><h3>Log in</h3></Link>
+            <Link to='/loginpage' className="enter_login_btn hvr-pulse-shrink"><h3>Log in</h3></Link>
           </div>
         </div>
       </div>
