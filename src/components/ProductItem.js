@@ -1,14 +1,15 @@
 import LikeSimg from "../images/icon/Like_S_icon.png";
+import LikeDimg from "../images/icon/Like_D_icon.png"
 import img1 from "../images/01.jpg";
 
 import { Link } from 'react-router-dom';
 import { useContext } from "react";
 import { StoreContext } from "../store"
-import { setProductDetail } from "../actions";
+import { addUserFav, removeUserFav, setProductDetail } from "../actions";
 
 
 export default function ProductItem({ product }) {
-    const { dispatch } = useContext(StoreContext);
+    const { state:{fav:{products,userInfo}},dispatch } = useContext(StoreContext);
     return (
         <div className="ProductItem_container hvr-grow-shadow">
             <Link to={`/products/${product.category2}/${product.id}`} 
@@ -29,7 +30,10 @@ export default function ProductItem({ product }) {
                     <p>
                     {product.description}
                     </p>
-                    <img className="pdI_Likeico" src={LikeSimg}/>
+                    {products.every(fav=>fav.id!==product.id)
+                        ? <img onClick={()=>{addUserFav(dispatch,userInfo,product)}} className="pdI_Likeico" src={LikeSimg}/> 
+                        : <img onClick={()=>{removeUserFav(dispatch,userInfo,product)}} className="pdI_Likeico" src={LikeDimg}/>
+                    }
                 </div>
             </div>
         </div>

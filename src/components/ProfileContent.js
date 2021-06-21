@@ -4,11 +4,12 @@ import like from "../images/icon/like_ico.png";
 import logout from "../images/icon/logout_ico.png";
 import manage from "../images/icon/manage_ico.png";
 import React, { useContext, useEffect } from "react";
-import { logoutFromFirebase, updateUserInfo, getUserOrders } from "../actions";
+import { logoutFromFirebase, updateUserInfo, getUserOrders ,requestPage } from "../actions";
 import { StoreContext } from "../store";
 import ProfileContentList from "../components/ProfileContentList";
 
 export default function ProfileContent() {
+    const { state: { swap: { page }} } = useContext(StoreContext);
     const { state: { userSignin: { userInfo }, userOrders, }, dispatch, } = useContext(StoreContext);
     const { displayName, email } = userInfo;
     const history = useHistory();
@@ -61,16 +62,16 @@ export default function ProfileContent() {
                 <div></div>
             </div>
             <div className="PrfC_choose_area">
-                <div className="PrfC_cho_box PrfC_cho_hv">
+                <div onClick={()=>requestPage(dispatch,'All')} className={page==='All'?'PrfC_cho_box PrfC_cho_hv prfc_selected':"PrfC_cho_box PrfC_cho_hv"}>
                     <h3>All</h3>
                 </div>
-                <div className="PrfC_cho_box PrfC_cho_hv">
+                <div onClick={()=>requestPage(dispatch,'Mods')} className={page==='Mods'?'PrfC_cho_box PrfC_cho_hv prfc_selected':"PrfC_cho_box PrfC_cho_hv"}>
                     <h3>Mods</h3>
                 </div>
-                <div className="PrfC_cho_box PrfC_cho_hv">
+                <div onClick={()=>requestPage(dispatch,'Texture')} className={page==='Texture'?'PrfC_cho_box PrfC_cho_hv prfc_selected':"PrfC_cho_box PrfC_cho_hv"}>
                     <h3>Texture</h3>
                 </div>
-                <div className="PrfC_cho_box PrfC_cho_hv">
+                <div onClick={()=>requestPage(dispatch,'Maps')} className={page==='Maps'?'PrfC_cho_box PrfC_cho_hv prfc_selected':"PrfC_cho_box PrfC_cho_hv"}>
                     <h3>Maps</h3>
                 </div>
             </div>
