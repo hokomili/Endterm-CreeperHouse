@@ -28,7 +28,7 @@ const allOrdersCollectionRef = firebase.firestore().collection("allOrders");
 
 //REFERENCE AUTH
 const auth = firebase.auth();
-
+const googleProvider= new firebase.auth.GoogleAuthProvider();
 export const getProductById = async (productId,category) => {
   // REFERENCE PRODUCTS COLLECTION
   const doc = await productsDocRef.collection(category).doc(productId).get();
@@ -126,6 +126,9 @@ export const feedYoutuber = () => {
 }
 export const signInWithEmailPassword = async (email, password) => {
   return await auth.signInWithEmailAndPassword(email, password);
+}
+export const signInWithGoogle = async () => {
+  return await auth.signInWithPopup(googleProvider);
 }
 
 export const registerWithEmailPassword = async (email, password, displayName) => {

@@ -35,6 +35,7 @@ import {
   BEGIN_USER_ORDERS,
   SUCCESS_USER_ORDERS,
   FAIL_USER_ORDERS,
+  CHANGE_THEME,
 } from "../utils/constants";
 
 import {
@@ -53,7 +54,9 @@ import {
   feedMods,
   feedTexture,
   feedYoutuber,
+  signInWithGoogle,
 } from "../api";
+import { changeColor } from "../utils";
 
 export const addCartItem = (dispatch, product, qty) => {
   const item = {
@@ -175,6 +178,25 @@ export const loginToFirebase = async (dispatch, userInfo) => {
   dispatch({ type: BEGIN_LOGIN_REQUEST });
   try {
     const user = await signInWithEmailPassword(userInfo.email.value, userInfo.password.value);
+    dispatch({
+      type: SUCCESS_LOGIN_REQUEST,
+      payload: user.user.providerData[0],
+    })
+    return user;
+  } catch (e) {
+    dispatch({
+      type: FAIL_LOGIN_REQUEST,
+      payload: e.message
+    })
+    console.log(e)
+    return null;
+  }
+}
+
+export const loginToGoogle = async (dispatch) => {
+  dispatch({ type: BEGIN_LOGIN_REQUEST });
+  try {
+    const user = await signInWithGoogle();
     dispatch({
       type: SUCCESS_LOGIN_REQUEST,
       payload: user.user.providerData[0],
@@ -315,4 +337,8 @@ export const getUserOrders = async (dispatch) => {
       payload: error 
     });
   }
+}
+export const setTheme =async(dispatch,e)=>{
+  const color = await changeColor(e);
+  dispatch({type:CHANGE_THEME,payload: color});
 }

@@ -10,6 +10,8 @@ import dscico from "../images/icon/discord_ico.png";
 import NavItem from "./NavItem";
 import { useState,useEffect,useContext } from "react";
 import { StoreContext } from "../store";
+import { changeColor } from "../utils";
+import { setTheme } from "../actions";
 
 export default function Navbar() {
   // function name1() {
@@ -17,12 +19,14 @@ export default function Navbar() {
   //     document.getElementById("A").src={HV_homeico};
   // }
   const { state: { userSignin : { userInfo, remember } } } = useContext(StoreContext);
+  const {state: {theme :{color}},dispatch}=useContext(StoreContext);
   const history = useHistory();
-
   const goToProfile = () => {
     history.push("/loginpage?redirect=profilepage");
   };
-
+  const changes =(e)=>{
+    setTheme(dispatch,e);
+  }
   useEffect(() => {
     if(remember)
         localStorage.setItem("userInfo", JSON.stringify(userInfo));
@@ -34,7 +38,9 @@ export default function Navbar() {
       <div className="Navbar_a1">
         <div onClick={goToProfile} className="navbar_flex Navbar_member_text" >
           {userInfo
-              ? <img className="Navbar_member_img" src={memberimg} />
+              ? userInfo.photoURL
+                ? <img className="Navbar_member_img" src={userInfo.photoURL} />
+                : <img className="Navbar_member_img" src={memberimg} />
               : <img className="Navbar_member_img" src={memberimg} />
           }
           <h3>
@@ -86,9 +92,10 @@ export default function Navbar() {
           </div>
         </NavItem>
         <NavItem
-          to="/YoutuberPage"
+          to="/youtuberpage"
           className="nav-item Navbar_Youtuber navbar_flex hvr-fade"
           activeClassName="nav-item--active"
+          title="Youtuber"
         >
           <img className="Navbar_Youtuber_p navbar_ico" src={ytico} />
           <div className="Navbar_w">
@@ -103,46 +110,48 @@ export default function Navbar() {
       </div>
 
       <div className="Navbar_a3">
-        <div className="Navbar_normal navbar_choic_flex">
-          <div className="Navbar_nm_choice">
-            <input
-              type="radio"
-              name="choice"
-              value="1"
-              className="navbar_choic"
-              defaultChecked
-            />{" "}
+        <form onChange={changes}>
+          <div className="Navbar_normal navbar_choic_flex">
+            <div className="Navbar_nm_choice">
+              <input
+                type="radio"
+                name="choice"
+                value="1"
+                className="navbar_choic"
+                defaultChecked
+              />{" "}
+            </div>
+            <div className="Navbar_nm_text navbar_choic_p">
+              <h3>Normal</h3>
+            </div>
           </div>
-          <div className="Navbar_nm_text navbar_choic_p">
-            <h3>Normal</h3>
+          <div className="Navbar_pink navbar_choic_flex">
+            <div className="Navbar_pk_choice">
+              <input
+                type="radio"
+                name="choice"
+                value="2"
+                className="navbar_choic"
+              />{" "}
+            </div>
+            <div className="Navbar_pk_text navbar_choic_p">
+              <h3>Pink</h3>
+            </div>
           </div>
-        </div>
-        <div className="Navbar_pink navbar_choic_flex">
-          <div className="Navbar_pk_choice">
-            <input
-              type="radio"
-              name="choice"
-              value="2"
-              className="navbar_choic"
-            />{" "}
+          <div className="Navbar_ice navbar_choic_flex">
+            <div className="Navbar_ice_choice">
+              <input
+                type="radio"
+                name="choice"
+                value="3"
+                className="navbar_choic"
+              />{" "}
+            </div>
+            <div className="Navbar_ice_text navbar_choic_p">
+              <h3>Blue</h3>
+            </div>
           </div>
-          <div className="Navbar_pk_text navbar_choic_p">
-            <h3>Pink</h3>
-          </div>
-        </div>
-        <div className="Navbar_ice navbar_choic_flex">
-          <div className="Navbar_ice_choice">
-            <input
-              type="radio"
-              name="choice"
-              value="3"
-              className="navbar_choic"
-            />{" "}
-          </div>
-          <div className="Navbar_ice_text navbar_choic_p">
-            <h3>Blue</h3>
-          </div>
-        </div>
+        </form>
       </div>
     </div>
   );

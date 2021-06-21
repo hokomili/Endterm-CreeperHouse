@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import YoutuberList from "../components/YoutuberList"
 
-export default function Youtube() {
+export default function Youtube({title}) {
   return (
     <div className="Youtube_Container">
       <div className="PrfC_a1">
@@ -45,7 +45,7 @@ export default function Youtube() {
             <h3>Other</h3>
           </div>
         </div>
-        <YoutuberList/>
+        <YoutuberList title={title}/>
       </div>
     </div>
   );

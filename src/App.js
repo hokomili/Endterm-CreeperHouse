@@ -32,7 +32,7 @@ function App() {
           <Route exact path="/profilepage" component={ProfilePage} />
           <Route exact path="/feedpage" component={FeedPage} />
           <Route exact path="/youtuberpage" component={YoutuberPage} />
-          <Route exact path="/ytSinglepage" component={YTSinglePage} />
+          <Route exact path="/ytsinglepage/:youtuber" component={YTSinglePage} />
           <Route path="/products/:cate/:productId" component={ProductPage} />
           <Route exact path="/Productpage" component={ProductPage} />
         </Switch>

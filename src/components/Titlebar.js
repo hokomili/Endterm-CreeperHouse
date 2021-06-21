@@ -1,5 +1,10 @@
-import logo from "../images/logo/nomal_logo.png";
+import normal from "../images/logo/nomal_logo.png";
+import pink from "../images/logo/pink_logo.png";
+import blue from "../images/logo/blue_logo.png";
 import Search from "../images/icon/search_ico.png";
+import { useContext,useState,useEffect } from "react";
+import { StoreContext } from "../store"
+import { setTheme } from "../actions";
 
 
 function Hambager(params) {
@@ -18,6 +23,18 @@ function Hambager(params) {
 
 
 export default function Titlebar() {
+  const { state: { theme: { color }},dispatch } = useContext(StoreContext);
+  function logo(color){
+    console.log(color);
+    switch(color){
+      case 'pink':
+        return pink;
+      case 'blue':
+        return blue;
+      default:
+        return normal;
+    }
+  }
   return (
     <div className="Titlebar_flex">
       <input id="nav-toggle" type="checkbox"  onClick={Hambager}></input>
@@ -28,7 +45,7 @@ export default function Titlebar() {
           <div class="ham-bar ham-bar--bottom"></div>
         </div>
       </label>
-      <img className="Titlebar_logo" src={logo} />
+      <img className="Titlebar_logo" src={logo(color)} />
       <div className="Titlebar_search">
         <img src={Search} className="Titlbar_search_ico" />
       </div>

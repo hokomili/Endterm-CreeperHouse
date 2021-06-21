@@ -59,3 +59,42 @@ export const FAIL_ORDER_DETAIL = 'FAIL_ORDER_DETAIL';
 export const BEGIN_USER_ORDERS = 'BEGIN_USER_ORDERS';
 export const SUCCESS_USER_ORDERS = 'SUCCESS_USER_ORDERS';
 export const FAIL_USER_ORDERS = 'FAIL_USER_ORDERS';
+
+//colors
+export const CHANGE_THEME = 'CHANGE_THEME';
+export const Normal=[
+    '#33c754',
+    '#eeeeee',
+    '#21770b',
+    '#359e1a',
+    '#d3ffde',
+    '#497554',
+    '#4b2b07',
+    '#ffa600',
+    'rgba(207, 199, 199, 0.32)',
+    'rgb(255, 255, 255)',
+    'rgb(0, 0, 0)'];
+export const Pink=[
+    '#f06d9f',
+    '#eeeeee',
+    '#d1417d',
+    '#e780ab',
+    '#ffd3fb',
+    '#d44263',
+    '#4b2b07',
+    '#e4a443',
+    'rgba(207, 199, 199, 0.32)',
+    'rgb(252, 178, 200)',
+    'rgb(177, 30, 86)'];
+export const Blue=[
+    '#3367c7',
+    '#eeeeee',
+    '#0f3988',
+    '#1a489e',
+    '#d3e1ff',
+    '#495875',
+    '#074b48',
+    '#00ffd5',
+    'rgba(207, 199, 199, 0.32)',
+    'rgb(170, 195, 248)',
+    'rgb(6, 34, 109)'];

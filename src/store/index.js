@@ -37,6 +37,7 @@ import {
   BEGIN_USER_ORDERS,
   SUCCESS_USER_ORDERS,
   FAIL_USER_ORDERS,
+  CHANGE_THEME,
 } from "../utils/constants";
 
 export const StoreContext = createContext();
@@ -120,6 +121,11 @@ const initialState = {
   userOrders: {
     loading: false,
     orders: [],
+    error: "",
+  },
+  theme: {
+    loading: false,
+    color: 'normal',
     error: "",
   }
 };
@@ -393,6 +399,16 @@ function reducer(state, action) {
           ...state.userOrders,
           loading: false,
           error: action.payload,
+        },
+      };
+    case CHANGE_THEME:
+      return {
+        ...state,
+        theme: { 
+          ...state.theme,
+          loading: false,
+          color:action.payload,
+          error:'',
         },
       };
     default:

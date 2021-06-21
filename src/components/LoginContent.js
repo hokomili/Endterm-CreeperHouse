@@ -2,7 +2,7 @@ import { Link,useHistory } from "react-router-dom";
 import fbbtn from "../images/icon/fb_btn.png";
 import googlebtn from "../images/icon/google_btn.png";
 import React, { useContext, useEffect } from "react";
-import { checkLogin, loginToFirebase, rememberLoginUser } from '../actions'
+import { checkLogin, loginToFirebase, rememberLoginUser,loginToGoogle } from '../actions'
 import { StoreContext } from "../store"
 
 export default function LoginContent({redirect}) {
@@ -14,7 +14,9 @@ export default function LoginContent({redirect}) {
     console.log('Received values of form: ', values.target.elements);
     await loginToFirebase(dispatch, values.target.elements);
   };
-
+  const onGoogle =async()=>{
+    await loginToGoogle(dispatch);
+  }
   const onChange = e => {
     rememberLoginUser(dispatch, e.target.checked);
   }
@@ -62,7 +64,7 @@ export default function LoginContent({redirect}) {
           </div>
 
           <div className="logC_box_r">
-            <button className="logC_r_google">
+            <button onClick={onGoogle} className="logC_r_google">
               <img className="logC_r_google_ico" src={googlebtn} />
               <div className="logC_r_google_text">
                 <h3>sign in with google</h3>
