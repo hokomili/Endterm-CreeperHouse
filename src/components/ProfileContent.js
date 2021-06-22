@@ -1,5 +1,5 @@
 import {Link,useHistory } from "react-router-dom";
-import peopel from "../images/people1.png";
+import peopel from "../images/icon/member_ico.png";
 import like from "../images/icon/like_ico.png";
 import logout from "../images/icon/logout_ico.png";
 import manage from "../images/icon/manage_ico.png";
