@@ -346,6 +346,7 @@ body {
   margin-top: 78px;
 }
 .H_Carousel_img {
+  width: 918px;
   height: 348px;
   background-color: var(--color3);
   color: var(--purewhite);
